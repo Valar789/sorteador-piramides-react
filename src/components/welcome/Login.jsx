@@ -5,6 +5,7 @@ import AuthContext from "../../utils/AuthContext";
 
 export default function Login() {
   const [value, setValues] = useState(null);
+  console.log(value);
   const [error, setError] = useState(false);
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
@@ -13,7 +14,6 @@ export default function Login() {
     e.preventDefault();
     if (KEY_ACCESS.includes(value)) {
       authContext.onLogin()
-      console.log(authContext.onLogin);
       navigate("/home");
     }
     else{
