@@ -22,6 +22,7 @@ export default function App() {
 
   const authValue = {
     onLogin: stateLogin,
+    
   };
 
   return (

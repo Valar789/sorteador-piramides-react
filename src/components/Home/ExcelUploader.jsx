@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ModalError from "./ModalError";
 import { createContext } from "react";
+import AuthContext from "../../utils/AuthContext";
 
 export const ThemeContext = createContext();
 
 export default function ExcelUploader() {
+
+  const [nameEvent, setNameEvent] = useState("")
+  const context = useContext(AuthContext)
+
   //Variables y estados
   const XLSX_MIME_TYPE =
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
@@ -12,7 +17,11 @@ export default function ExcelUploader() {
   const [file, setFile] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-
+  const handleSubmit =(e)=>{
+    e.preventDefault()
+    context.nameEvent = nameEvent
+    console.log(context.nameEvent);
+  }
   /**
    * Función que maneja la carga de un archivo y lo establece como archivo actual en el estado de la aplicación, siempre y cuando el archivo sea de un tipo válido.
    * Si el archivo no es válido, establece el archivo como null en el estado de la aplicación y muestra un modal para informar al usuario.
@@ -32,10 +41,10 @@ export default function ExcelUploader() {
   };
 
   return (
-    <div className="">
+    <form onSubmit={handleSubmit} className="">
       <div className="grid place-content-center text-center p-3 mb-8">
       <h2 className="text-white text-center text-2xl mb-3">Nombre del evento</h2>
-      <input className="rounded-xl text-lg px-24 py-1 bg-white" type="text" />
+      <input onChange={(e)=>setNameEvent(e.target.value)} className="rounded-xl text-lg px-24 py-1 bg-white" type="text" />
       </div>
       <h3 className="text-white text-center text-2xl mb-8">
         Cargar archivo de Pirámide de competencia
@@ -62,7 +71,7 @@ export default function ExcelUploader() {
           </button>
         </div>
 
-        <button className="bg-greenPrimary text-white p-3 rounded-xl">
+        <button type="submit" className="bg-greenPrimary text-white p-3 rounded-xl">
           Comenzar
         </button>
       </div>
@@ -72,6 +81,6 @@ export default function ExcelUploader() {
       </span>
 
       {showModal && <ModalError setShowModal={setShowModal} />}
-    </div>
+    </form>
   );
 }
