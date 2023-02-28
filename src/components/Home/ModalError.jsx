@@ -1,11 +1,10 @@
 import React from "react";
-import imgAlert from "../../images/logos/alert.svg";
+import imgAlert from "../../assets/logos/alert.svg";
 
 export default function ModalError({ setShowModal }) {
   const handleCloseModal = () => {
     setShowModal(false);
   };
-
   return (
     <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-700 bg-opacity-75">
       <div className="bg-white flex flex-col items-center justify-center ">

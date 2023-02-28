@@ -1,6 +1,7 @@
 import React from "react";
-import BoardCard from "../components/board/BoardCard";
-import Filter from "../components/board/Filter";
+import CardsBoard from "../components/board/CardsBoard";
+ 
+import FilterCategories from "../components/board/FilterCategories";
 import BreadCrumb from "../components/layout/BreadCrumb";
 
 export default function Board() {
@@ -9,8 +10,8 @@ export default function Board() {
       <div>
         <BreadCrumb /> <p>2 de 18 grupos sorteados</p>
       </div>
-      <Filter />
-      <BoardCard />
+      <FilterCategories />
+      <CardsBoard />
     </div>
   );
 }
