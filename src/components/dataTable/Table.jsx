@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { bdPruebas } from "../../consts/bdPruebas";
+ 
 
 
 export default function Table() {
