@@ -31,9 +31,7 @@ export default function App() {
     <GlobalContext.Provider value={authValue}>
       <BrowserRouter>
         <Routes>
-      
             <Route
-        
               path="/"
               element={<Welcome /> }
             />
