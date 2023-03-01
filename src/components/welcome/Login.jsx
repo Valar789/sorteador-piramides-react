@@ -5,8 +5,6 @@ import GlobalContext from "../../utils/GlobalContext";
 
 export default function Login() {
   const [value, setValues] = useState(null);
-  console.log(value);
-  const [error, setError] = useState(false);
   const authContext = useContext(GlobalContext);
   const navigate = useNavigate();
 

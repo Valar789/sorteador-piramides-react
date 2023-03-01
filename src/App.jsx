@@ -9,7 +9,6 @@ import Templates from "./views/Templates";
 import Welcome from "./views/Welcome";
 
 const routes = [
-  { path: "/", element: <Welcome /> },
   { path: "/home", element: <Home /> },
   { path: "/board", element: <Board /> },
   { path: "/data", element: <DataTable /> },
@@ -32,6 +31,12 @@ export default function App() {
     <GlobalContext.Provider value={authValue}>
       <BrowserRouter>
         <Routes>
+      
+            <Route
+        
+              path="/"
+              element={<Welcome /> }
+            />
           {routes.map(({ path, element }) => (
             <Route
               key={path}
