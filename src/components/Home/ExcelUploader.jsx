@@ -3,6 +3,9 @@ import ModalError from "./ModalError";
 import { createContext } from "react";
 import GlobalContext from "../../utils/GlobalContext";
 import { excelTypes } from "../../consts/excelTypes";
+import * as XLSX from "xlsx";
+import { useNavigate } from "react-router-dom";
+
 export const ThemeContext = createContext();
 
 export default function ExcelUploader() {
@@ -10,19 +13,38 @@ export default function ExcelUploader() {
   const [showModal, setShowModal] = useState(false);
   const [excelFile, setExcelFile] = useState(null);
 
+  const navigate = useNavigate();
   const context = useContext(GlobalContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
-    context.nameEvent = nameEvent;
-    console.log(excelFile);
-    console.log(context.nameEvent);
+    if (excelFile !== null) {
+      context.nameEvent = nameEvent;
+      const workbook = XLSX.read(excelFile);
+      const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+      const data = XLSX.utils.sheet_to_json(worksheet);
+      const json = JSON.stringify(data);
+      localStorage.setItem("excelData", json);
+      localStorage.setItem("nameEvent", nameEvent);
+      navigate("/data");
+    } else {
+      setShowModal(true);
+    }
   };
+
   const handleFileUpload = (event) => {
     const selectedFile = event.target.files[0];
-    if (selectedFile && excelTypes.includes(selectedFile.type)) {
-      setExcelFile(selectedFile);
+ 
+    if (selectedFile) {
+      if (selectedFile && excelTypes.includes(selectedFile.type)) {
+        let reader = new FileReader();
+        reader.readAsArrayBuffer(selectedFile);
+        reader.onload = (e) => {
+          setExcelFile(e.target.result);
+        };
+      } else {
+        setShowModal(true);
+      }
     } else {
       console.log("plz select your file");
     }
@@ -35,6 +57,7 @@ export default function ExcelUploader() {
           Nombre del evento
         </h2>
         <input
+          required
           onChange={(e) => setNameEvent(e.target.value)}
           className="rounded-xl text-lg px-24 py-1 bg-white"
           type="text"
@@ -44,31 +67,17 @@ export default function ExcelUploader() {
         Cargar archivo de Pirámide de competencia
       </h3>
       <div className="flex place-content-center gap-3  mb-3">
-        <div className="flex pl-8 pr-4 pt-3 justify-between gap-8 relative rounded-xl bg-white">
-          <div>
-            <span className="font-bold">
-              {excelFile ? excelFile.name : "Seleccionar archivo"}
-            </span>
-            <input
-              onChange={handleFileUpload}
-              type="file"
-              name="FileAttachment"
-              id="FileAttachment"
-              className="opacity-0 absolute"
-            />
-          </div>
-          <button
-            id="buttonAdd"
-            className="grid place-content-center w-7 h-7 pb-1 font-light text-xl bg-blueSecondary text-white rounded-full"
-          >
-            +
-          </button>
+        <div className="flex pl-8 pr-4 pt-3 justify-between gap-8 file-upload relative rounded-xl bg-white">
+          <input
+            onChange={handleFileUpload}
+            type="file"
+            name="FileAttachment"
+            id="FileAttachment"
+            className=""
+          />
         </div>
 
-        <button
-          type="submit"
-          className="bg-greenPrimary text-white p-3 rounded-xl"
-        >
+        <button className="bg-greenPrimary text-white p-3 rounded-xl">
           Comenzar
         </button>
       </div>
