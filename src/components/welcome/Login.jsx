@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { KEY_ACCESS } from "../../consts/keysAccess";
-import AuthContext from "../../utils/AuthContext";
+import GlobalContext from "../../utils/GlobalContext";
 
 export default function Login() {
   const [value, setValues] = useState(null);
   console.log(value);
   const [error, setError] = useState(false);
-  const authContext = useContext(AuthContext);
+  const authContext = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {

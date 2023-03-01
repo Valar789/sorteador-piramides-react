@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import AuthContext from "./utils/AuthContext";
+import GlobalContext from "./utils/GlobalContext";
 import Board from "./views/Board";
 import DataTable from "./views/DataTable";
 import Home from "./views/Home";
@@ -26,7 +26,7 @@ export default function App() {
   };
 
   return (
-    <AuthContext.Provider value={authValue}>
+    <GlobalContext.Provider value={authValue}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Welcome />} />
@@ -53,6 +53,6 @@ export default function App() {
           />
         </Routes>
       </BrowserRouter>
-    </AuthContext.Provider>
+    </GlobalContext.Provider>
   );
 }
