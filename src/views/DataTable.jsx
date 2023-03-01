@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Finder from "../components/dataTable/Finder";
 import Table from "../components/dataTable/Table";
 import Layout from "../components/layout/Layout";
+import NavBar from "../components/layout/NavBar";
 
 export default function DataTable() {
   const [dataExcel, setDataExcel] = useState([]);
@@ -18,6 +19,7 @@ export default function DataTable() {
 
   return (
     <Layout>
+      <NavBar/>
       <Finder
         dataExcel={dataExcel}
         setSearchValue={setSearchValue}
