@@ -10,7 +10,7 @@ export default function TableCategories() {
             <th>CMDYA372</th>
           </tr>
         </thead>
-        <tbody class="text-sm">
+        <tbody class=" text-sm">
           <tr class=" border border-gray-200 dark:border-gray-700">
             <th
               scope="row"
@@ -18,34 +18,34 @@ export default function TableCategories() {
             >
               CATEGORÍA
             </th>
-            <td class="border px-4 py-4">Nombre de la categoría</td>
+            <td class="border px-4 ">Nombre de la categoría</td>
           </tr>
           <tr class="border border-gray-200 dark:border-gray-700">
             <th
               scope="row"
-              class="px-6 py-4 font-medium   bg-blueSecondary text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+              class="px-6 py-2 font-medium   bg-blueSecondary text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
             >
               GRADO
             </th>
-            <td class="border px-6 py-4">Nombre del Grado</td>
+            <td class="border px-6 ">Nombre del Grado</td>
           </tr>
           <tr class="border border-gray-200 dark:border-gray-700">
             <th
               scope="row"
-              class="px-6 py-4 font-medium   bg-blueSecondary text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+              class="px-6 py-2 font-medium   bg-blueSecondary text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
             >
               RAMA
             </th>
-            <td class="border px-6 py-4">Nombre de la Rama</td>
+            <td class="border px-6">Nombre de la Rama</td>
           </tr>
           <tr class="border border-gray-200 dark:border-gray-700">
             <th
               scope="row"
-              class="px-6 py-4 font-medium   bg-blueSecondary text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+              class="px-6 py-2 font-medium   bg-blueSecondary text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
             >
               DIVISIÓN
             </th>
-            <td class="border px-6 py-4">Nombre de la división</td>
+            <td class="border px-6 ">Nombre de la división</td>
           </tr>
         </tbody>
       </table>
