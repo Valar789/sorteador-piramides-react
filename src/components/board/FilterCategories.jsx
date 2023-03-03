@@ -7,7 +7,7 @@ export default function FilterCategories() {
         Código
       </label>
       <select className="rounded-2xl mx-5 py-3 px-4 shadow-lg text-sm">
-        <option selected>Escoge un Código</option>
+        <option value>Escoge un Código</option>
         <option value="">Opcion 1</option>
         <option value="">Opcion 2</option>
         <option value="">Opcion 3</option>
@@ -17,7 +17,7 @@ export default function FilterCategories() {
         Categoria
       </label>
       <select className="rounded-2xl mx-5 py-3 px-4 shadow-lg text-sm">
-        <option selected>Escoge una categoría</option>
+        <option value>Escoge una categoría</option>
         <option value="">Opcion 1</option>
         <option value="">Opcion 2</option>
         <option value="">Opcion 3</option>
@@ -27,7 +27,7 @@ export default function FilterCategories() {
         Grado
       </label>
       <select className="rounded-2xl mx-5 py-3 px-4 shadow-lg text-sm">
-        <option selected>Escoge un grado</option>
+        <option value>Escoge un grado</option>
         <option value="">Opcion 1</option>
         <option value="">Opcion 2</option>
         <option value="">Opcion 3</option>
@@ -35,7 +35,7 @@ export default function FilterCategories() {
       </select>
       <label className=" mb-2 text-sm font-medium text-bluePrimary">Rama</label>
       <select className="rounded-2xl mx-5 py-3 px-4 shadow-lg text-sm">
-        <option selected>Escoge una Rama</option>
+        <option value>Escoge una Rama</option>
         <option value="">Opcion 1</option>
         <option value="">Opcion 2</option>
         <option value="">Opcion 3</option>
@@ -45,7 +45,7 @@ export default function FilterCategories() {
         División
       </label>
       <select className="rounded-2xl mx-5 py-3 px-4 shadow-lg text-sm">
-        <option selected>Escoge una división</option>
+        <option value>Escoge una división</option>
         <option value="">Opcion 1</option>
         <option value="">Opcion 2</option>
         <option value="">Opcion 3</option>
@@ -53,7 +53,7 @@ export default function FilterCategories() {
       </select>
       <label className=" mb-2 text-sm font-medium text-bluePrimary">Estado</label>
       <select className="rounded-2xl mx-5 py-3 px-4 shadow-lg text-sm">
-        <option selected>Escoge una Estado</option>
+        <option value>Escoge una Estado</option>
         <option value="">Opcion 1</option>
         <option value="">Opcion 2</option>
         <option value="">Opcion 3</option>
