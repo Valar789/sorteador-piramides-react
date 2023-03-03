@@ -2,11 +2,13 @@
   import { useLocation } from "react-router-dom";
 
 export default function Header() {
+  //function for search path in the route whit the function useLocation
   const ConditionNavbar = () => {
     const location = useLocation();
-    console.log(location.pathname); // muestra el path actual en la consola
+    console.log(location.pathname);
   };
-  
+ 
+
 
   return (
     <>

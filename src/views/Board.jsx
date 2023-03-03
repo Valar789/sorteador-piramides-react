@@ -11,7 +11,8 @@ export default function Board() {
     <div>
       <div>
         <Header/>
-        <BreadCrumb /> <p>2 de 18 grupos sorteados</p>
+        <BreadCrumb /> 
+        <p className="text-right m-3 text-white">2 de 18 grupos sorteados</p>
       </div>
       <FilterCategories />
       <CardsBoard />
