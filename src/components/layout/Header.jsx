@@ -1,13 +1,12 @@
   import React from "react";
   import { useLocation } from "react-router-dom";
-  import Board from "../../views/Board";
-  import NavBar from "./NavBar";
 
 export default function Header() {
   const ConditionNavbar = () => {
     const location = useLocation();
     console.log(location.pathname); // muestra el path actual en la consola
   };
+  
 
   return (
     <>
