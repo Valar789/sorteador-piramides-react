@@ -1,12 +1,21 @@
   import React from "react";
   import { useLocation } from "react-router-dom";
+import NavBar from "./NavBar";
+
 
 export default function Header() {
   //function for search path in the route whit the function useLocation
   const ConditionNavbar = () => {
     const location = useLocation();
     console.log(location.pathname);
+
+    if (location.pathname === "/Board") {
+      return(
+        <NavBar/>
+      )
+    }
   };
+
  
 
 
