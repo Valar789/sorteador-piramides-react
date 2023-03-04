@@ -4,9 +4,12 @@ export default function Table({ dataExcel, filteredPerson }) {
   return (
     <div className="h-64 overflow-auto bg-white  shadow-md sm:rounded-lg">
       <div className="flex justify-end bg-bluePrimary p-3 text-white">
-        <h3>{filteredPerson.length} deportistas</h3>
+        <h3>
+          {filteredPerson.length > 0 ? filteredPerson.length : dataExcel.length}{" "}
+          deportistas
+        </h3>
       </div>
-      <table className="w-full text-center text-sm  text-gray-500 text-gray-400">
+      <table className="w-full text-center text-sm ">
         <thead className="bg-bluePrimary  text-white text-xs uppercase ">
           <tr>
             <th scope="col" className="px-6 py-3">
@@ -40,7 +43,7 @@ export default function Table({ dataExcel, filteredPerson }) {
             ? filteredPerson.map((deportista) => (
                 <tr
                   key={deportista.CodDep}
-                  className="bg-white border-b bg-gray-800 border-gray-700 hover:bg-gray-50 hover:bg-gray-600"
+                  className=" border-b  border-gray-700 "
                 >
                   <td className="">{deportista["CodDep"]}</td>
                   <td className="">{deportista["Delegación"]}</td>
@@ -55,7 +58,7 @@ export default function Table({ dataExcel, filteredPerson }) {
             : dataExcel.map((deportista) => (
                 <tr
                   key={deportista.CodDep}
-                  className="bg-white border-b bg-gray-800 border-gray-700 hover:bg-gray-50 hover:bg-gray-600"
+                  className=" border-b  "
                 >
                   <td className="">{deportista["CodDep"]}</td>
                   <td className="">{deportista["Delegación"]}</td>

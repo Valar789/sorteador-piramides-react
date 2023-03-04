@@ -10,8 +10,10 @@ export default function DataTable() {
 
   useEffect(() => {
     const json = localStorage.getItem("excelData");
+    console.log(json);
     if (json !== null) {
       const data = JSON.parse(json);
+      console.log(data);
       setDataExcel(data);
     }
   }, []);

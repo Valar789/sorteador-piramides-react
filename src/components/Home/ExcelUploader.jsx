@@ -51,19 +51,19 @@ export default function ExcelUploader() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="">
-      <div className="grid place-content-center text-center p-3 mb-8">
-        <h2 className="text-white text-center text-2xl mb-3">
+    <form onSubmit={handleSubmit} className="text-center">
+      <div className="p-3 mb-8 w-full ">
+        <h2 className="text-white text-2xl mb-3">
           Nombre del evento
         </h2>
         <input
           required
           onChange={(e) => setNameEvent(e.target.value)}
-          className="rounded-xl text-lg px-24 py-1 bg-white"
+          className="rounded-xl text-lg w-full  py-1 bg-white"
           type="text"
         />
       </div>
-      <h3 className="text-white text-center text-2xl mb-8">
+      <h3 className="text-white text-2xl mb-8">
         Cargar archivo de Pirámide de competencia
       </h3>
       <div className="flex place-content-center gap-3  mb-3">
@@ -83,7 +83,7 @@ export default function ExcelUploader() {
       </div>
 
       <span className="text-white">
-        * Verifica que el archivo esté en formato Excel y extensión .xlsm
+        * Verifica que el archivo esté en formato Excel y extensión xlsx o xlsm
       </span>
 
       {showModal && <ModalError setShowModal={setShowModal} />}
