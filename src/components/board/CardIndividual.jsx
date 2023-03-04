@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FilterInfo({ ready }) {
+export default function CardIndividual({ ready }) {
   return (
     <div className=" m-6 max-w-md bg-white border border-gray-200 rounded-lg shadow">
       <div className="text-center grid grid-cols-12 p-4 rounded-lg bg-bluePrimary">

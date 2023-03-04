@@ -1,6 +1,6 @@
 import React from "react";
-import FilterInfo from "./FilterInfo";
+import CardIndividual from "./CardIndividual";
 
 export default function CardsBoard() {
-  return <FilterInfo ready={false} />;
+  return <CardIndividual ready={false} />;
 }
