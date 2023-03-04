@@ -9,16 +9,13 @@ export default function Header() {
     const location = useLocation();
     console.log(location.pathname);
 
-    if (location.pathname === "/Board") {
+    if (location.pathname === "/board") {
       return(
         <NavBar/>
       )
     }
   };
-
  
-
-
   return (
     <>
       <header className="p-4 bg-bluePrimary  text-white">
