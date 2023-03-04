@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function BreadCrumb() {
   return (
-     <nav aria-label="breadcrumb" className="w-full p-4 dark:bg-gray-800 dark:text-gray-100">
-        <ol className="flex h-8 space-x-2">
+     <nav aria-label="breadcrumb" className="w-full p-4">
+        <ol className="flex h-8 space-x-2 text-white">
             <li className="flex items-center">
                 <a rel="noopener noreferrer" href="#" title="Back to homepage" className="hover:underline">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 pr-1 dark:text-gray-400">

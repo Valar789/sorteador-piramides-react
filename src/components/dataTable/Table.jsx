@@ -10,28 +10,28 @@ export default function Table({ dataExcel, filteredPerson }) {
         <thead className="bg-bluePrimary  text-white text-xs uppercase ">
           <tr>
             <th scope="col" className="px-6 py-3">
-              No.
+            CodDep
             </th>
             <th scope="col" className="px-6 py-3">
-              DELEGACIÓN
+            Delegación
             </th>
             <th scope="col" className="px-6 py-3">
-              NOMBRES Y APELLIDOS
+            Nombre Deportista
             </th>
             <th scope="col" className="px-6 py-3">
-              RAMA
+            Categoría
             </th>
             <th scope="col" className="px-6 py-3">
-              EDAD
+              Rama
             </th>
             <th scope="col" className="px-6 py-3">
-              GRADO
+              Grado
             </th>
             <th scope="col" className="px-6 py-3">
-              PESO
+              División
             </th>
             <th scope="col" className="px-6 py-3">
-              CÓDIGO
+            CBTE IND
             </th>
           </tr>
         </thead>
