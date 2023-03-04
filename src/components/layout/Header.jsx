@@ -11,9 +11,9 @@ export default function Header() {
         {/* <NavBar /> */}
       </header>
       <div className="flex place-content-center bg-blueSecondary">
-        <div className="w-96 w- lg:w-80 h-2 bg-yellow"></div>
-        <div className="w-96 lg:w-80 h-2 bg-blue"></div>
-        <div className="w-96 lg:w-80 h-2 bg-red"></div>
+        <div className="w-96 w- lg:w-80 h-2 bg-yellow-500"></div>
+        <div className="w-96 lg:w-80 h-2 bg-blue-500"></div>
+        <div className="w-96 lg:w-80 h-2 bg-red-500"></div>
       </div>
     </>
   );
