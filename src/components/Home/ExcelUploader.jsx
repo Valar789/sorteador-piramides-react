@@ -59,7 +59,7 @@ export default function ExcelUploader() {
         <input
           required
           onChange={(e) => setNameEvent(e.target.value)}
-          className="rounded-xl text-lg px-24 py-1 bg-white"
+          className="rounded-xl text-center text-lg px-24 py-1 bg-white"
           type="text"
         />
       </div>

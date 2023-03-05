@@ -23,7 +23,7 @@ export default function TableCategories() {
           <tr className="border border-gray-200 dark:border-gray-700">
             <th
               scope="row"
-              className="px-6 py-2 font-medium   bg-blueSecondary text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+              className="px-6 py-2 font-medium   bg-blueSecondary"
             >
               GRADO
             </th>
@@ -32,7 +32,7 @@ export default function TableCategories() {
           <tr className="border border-gray-200 dark:border-gray-700">
             <th
               scope="row"
-              className="px-6 py-2 font-medium   bg-blueSecondary text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+              className="px-6 py-2 font-medium   bg-blueSecondary"
             >
               RAMA
             </th>
@@ -41,7 +41,7 @@ export default function TableCategories() {
           <tr className="border border-gray-200 dark:border-gray-700">
             <th
               scope="row"
-              className="px-6 py-2 font-medium   bg-blueSecondary text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+              className="px-6 py-2 font-medium   bg-blueSecondary"
             >
               DIVISIÓN
             </th>
