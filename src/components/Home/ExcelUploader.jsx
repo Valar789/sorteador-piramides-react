@@ -51,50 +51,58 @@ export default function ExcelUploader() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center justify-center flex-col py-6">
-      <div className="">
-          <label className="text-white text-left text-lg mb-3">
+    <div className="h-screen flex items-center flex-col">
+      <form
+        onSubmit={handleSubmit}
+        className="flex items-center justify-center flex-col"
+      >
+        <div className="">
+          <label className="text-white font-normal text-left mx-48 text-lg mb-3">
             Ingresa el nombre del evento: *
           </label>
-        <div className="">
-          <input
-            required
-            onChange={(e) => setNameEvent(e.target.value)}
-            className="rounded-xl text-lg py-1 px-44 border-2 bg-white/50 border-white"
-            type="text"
-          />
-        </div>
-        <label className="text-white text-left block mb-2 my-9 text-lg">
-          Carga el listado de competidores: *
-        </label>
-        <div className="gap-3 mb-3">
-          <input
-            onChange={handleFileUpload}
-            type="file"
-            name="FileAttachment"
-            id="FileAttachment"
-            className="pl-0 pr-56 cursor-pointer relative file-upload rounded-xl text-lg text-white px-24 py-1 border-2  bg-white/50 border-white"
-          />
-   
-        </div>
-        <div>
-          <span className="w-2/3 inline-block text-white text-sm py-5">
-          Verifica que el listado sea el correspondiente para sortear y que se
-          encuentre en la estructura definida en formato Excel con extensión
-          .XLSM o .XLSX.{" "}
-        </span>
+          <div className="flex items-center justify-center flex-col">
+            <input
+              required
+              onChange={(e) => setNameEvent(e.target.value)}
+              className="rounded-xl placeholder:text-white/80 pl-2 pr-80 backdrop-blur-md text-lg py-1 px-44 border-2 bg-white/20 backdrop-blur-sm border-white"
+              type="text"
+              placeholder="Nombre del evento"
+            />
           </div>
-        <div className="flex items-center">
-          <a href="" className=" underline mx-3 my-3 border-redborderbuttons text-white p-3 rounded-xl">
-          Descargar Plantilla de sorteos          </a>
+          <label className="text-white text-left block mb-2 my-9 mx-48 text-lg">
+            Carga el listado de competidores: *
+          </label>
+          <div className="flex items-center justify-center flex-col gap-3 mb-3">
+            <input
+              onChange={handleFileUpload}
+              type="file"
+              name="FileAttachment"
+              id="FileAttachment"
+              className="pl-0 pr-44 relative file:text-white file:border-r-white file:bg-white/30 file:h-10  file:border-r-4 file:border-l-0 file:border-y-0 file:rounded-xl rounded-xl text-lg text-white px-24 border-2  bg-white/50 border-white"
+            />
+          </div>
+          <div className="flex items-center justify-center">
+            <span className="w-2/3  text-center inline-block text-white text-sm">
+              Verifica que el listado sea el correspondiente para sortear y que
+              se encuentre en la estructura definida en formato Excel con
+              extensión .XLSM o .XLSX.{" "}
+            </span>
+          </div>
+          <div className="flex items-center justify-center my-10">
+            <a
+              href=""
+              className=" underline mx-3 my-3 border-redborderbuttons text-white p-3 rounded-xl"
+            >
+              Descargar Plantilla de sorteos{" "}
+            </a>
 
-          <button className="bg-redbuttons border-2 my-3 border-redborderbuttons text-white p-3 rounded-xl">
-            Comenzar
-          </button>
+            <button className="bg-redbuttons border-2 my-3 border-redborderbuttons text-white p-3 rounded-xl">
+              Comenzar
+            </button>
+          </div>
         </div>
+        {showModal && <ModalError setShowModal={setShowModal} />}
+      </form>
       </div>
-
-      {showModal && <ModalError setShowModal={setShowModal} />}
-    </form>
   );
 }
