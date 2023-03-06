@@ -33,13 +33,14 @@ thead{
  /* ancho de la barra */
 ::-webkit-scrollbar {
     width: 1px;
-    height: 15px;    
+    height: 15px;   
+     
     
   }
   
   /* color de fondo de la barra */
   ::-webkit-scrollbar-track {
-    background-color: #f5f5f5;
+    background-color: transparent;
   }
   
   /* color del relleno de la barra */

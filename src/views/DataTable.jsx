@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import Finder from "../components/dataTable/Finder";
 import Table from "../components/dataTable/Table";
 import Layout from "../components/layout/Layout";
 import NavBar from "../components/layout/NavBar";
+import iconDivider from '../assets/icons/iconDivider.svg'
 
 export default function DataTable() {
   const [dataExcel, setDataExcel] = useState([]);
@@ -34,17 +34,18 @@ export default function DataTable() {
           <NavBar />
         </div>
 
-        <div className="rounded-md border">
+        <div className="rounded-2xl bg-white/20 border">
           <Table dataExcel={dataExcel} filteredPerson={filteredPerson} />
         </div>
 
         <div className="flex justify-center gap-10 items-center  p-3 text-white">
-          <h3>
+          <div className="flex gap-2">
+            <img src={iconDivider} alt="" />
             Total competidores{" "}
             {filteredPerson.length > 0
               ? filteredPerson.length
               : dataExcel.length}
-          </h3>
+          </div>
           <Link to="/board" className="bg-red-600 px-7 py-2 rounded-md">
             Ver grupos
           </Link>
