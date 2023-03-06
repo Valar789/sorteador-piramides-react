@@ -8,10 +8,11 @@ import Layout from "../components/layout/Layout";
 
 export default function Board() {
   return (
+    <div id="board" className="h-screen">
     <Layout>
-
       <FilterCategories />
       <CardsBoard />
     </Layout>
+    </div>
   );
 }
