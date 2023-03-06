@@ -17,7 +17,7 @@ export default function Welcome() {
     
       {/* section Access */}
       <Login />
-      
+
       {/* section Logos */}
       <div className="fixed right-96 bottom-48 px-10">
         <p>Un producto de:</p>

@@ -34,7 +34,7 @@ export default function ExcelUploader() {
 
   const handleFileUpload = (event) => {
     const selectedFile = event.target.files[0];
- 
+
     if (selectedFile) {
       if (selectedFile && excelTypes.includes(selectedFile.type)) {
         let reader = new FileReader();
@@ -51,40 +51,48 @@ export default function ExcelUploader() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="">
-      <div className="grid place-content-center text-center p-3 mb-8">
-        <h2 className="text-white text-center text-2xl mb-3">
-          Nombre del evento
-        </h2>
-        <input
-          required
-          onChange={(e) => setNameEvent(e.target.value)}
-          className="rounded-xl text-lg px-24 py-1 bg-white"
-          type="text"
-        />
-      </div>
-      <h3 className="text-white text-center text-2xl mb-8">
-        Cargar archivo de Pirámide de competencia
-      </h3>
-      <div className="flex place-content-center gap-3  mb-3">
-        <div className="flex pl-8 pr-4 pt-3 justify-between gap-8 file-upload relative rounded-xl bg-white">
+    <form onSubmit={handleSubmit} className="flex items-center justify-center flex-col py-6">
+      <div className="">
+          <label className="text-white text-left text-lg mb-3">
+            Ingresa el nombre del evento: *
+          </label>
+        <div className="">
+          <input
+            required
+            onChange={(e) => setNameEvent(e.target.value)}
+            className="rounded-xl text-lg py-1 px-44 border-2 bg-white/50 border-white"
+            type="text"
+          />
+        </div>
+        <label className="text-white text-left block mb-2 my-9 text-lg">
+          Carga el listado de competidores: *
+        </label>
+        <div className="gap-3 mb-3">
           <input
             onChange={handleFileUpload}
             type="file"
             name="FileAttachment"
             id="FileAttachment"
-            className=""
+            className="pl-0 pr-56 cursor-pointer relative file-upload rounded-xl text-lg text-white px-24 py-1 border-2  bg-white/50 border-white"
           />
+   
         </div>
+        <div>
+          <span className="w-2/3 inline-block text-white text-sm py-5">
+          Verifica que el listado sea el correspondiente para sortear y que se
+          encuentre en la estructura definida en formato Excel con extensión
+          .XLSM o .XLSX.{" "}
+        </span>
+          </div>
+        <div className="flex items-center">
+          <a href="" className=" underline mx-3 my-3 border-redborderbuttons text-white p-3 rounded-xl">
+          Descargar Plantilla de sorteos          </a>
 
-        <button className="bg-greenPrimary text-white p-3 rounded-xl">
-          Comenzar
-        </button>
+          <button className="bg-redbuttons border-2 my-3 border-redborderbuttons text-white p-3 rounded-xl">
+            Comenzar
+          </button>
+        </div>
       </div>
-
-      <span className="text-white">
-        * Verifica que el archivo esté en formato Excel y extensión .xlsm
-      </span>
 
       {showModal && <ModalError setShowModal={setShowModal} />}
     </form>
