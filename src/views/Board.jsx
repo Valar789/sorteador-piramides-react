@@ -2,16 +2,16 @@ import React from "react";
 import CardsBoard from "../components/board/CardsBoard";
  
 import FilterCategories from "../components/board/FilterCategories";
-import BreadCrumb from "../components/layout/BreadCrumb";
+
+import Layout from "../components/layout/Layout";
+ 
 
 export default function Board() {
   return (
-    <div>
-      <div>
-        <BreadCrumb /> <p>2 de 18 grupos sorteados</p>
-      </div>
+    <Layout>
+
       <FilterCategories />
       <CardsBoard />
-    </div>
+    </Layout>
   );
 }
