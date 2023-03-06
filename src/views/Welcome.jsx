@@ -14,6 +14,7 @@ export default function Welcome() {
           Bienvenido al Sorteador de Pirámides de Competencias para Hapkido
          </p>
       </div>
+      
     
       {/* section Access */}
       <Login />

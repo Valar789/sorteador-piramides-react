@@ -5,7 +5,7 @@ import GlobalContext from "../../utils/GlobalContext";
 import { excelTypes } from "../../consts/excelTypes";
 import * as XLSX from "xlsx";
 import { useNavigate } from "react-router-dom";
-import icondowload from '../Home/icondowload.svg'
+import icondowload from '../../assets/icons/icondowload.svg'
 
 export const ThemeContext = createContext();
 
@@ -65,7 +65,7 @@ export default function ExcelUploader() {
             <input
               required
               onChange={(e) => setNameEvent(e.target.value)}
-              className="rounded-xl placeholder:text-white/80 pl-2 pr-80 backdrop-blur-md text-lg py-1 px-44 border-2 bg-white/20 backdrop-blur-sm border-white"
+              className="rounded-xl text-white placeholder:text-white/80 pl-2 pr-80 backdrop-blur-md text-lg py-1 px-44 border-2 bg-white/20  border-white"
               type="text"
               placeholder="Nombre del evento"
             />
