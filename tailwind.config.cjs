@@ -12,10 +12,9 @@ module.exports = {
         blueSecondary: '#6C82BB',
         greenPrimary: "#58AA56",
         redPrimary : "#DD451D",
-      },
+      }
     },
-    
-
+   
   },
   plugins: [ ],
 }
