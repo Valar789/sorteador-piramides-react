@@ -23,25 +23,26 @@ export default function Login() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex w-96  flex-col fixed bottom-44 right-24 "
+      className="flex w-96  flex-col fixed bottom-96 right-52 "
     >
-      <h1 className="text-2xl mb-3 font-semibold text-center">
-        Introduce clave de acceso
+      <h1 className="text-lg mb-3 font-normal">
+        Ingresa tu código de acceso
       </h1>
+
+      <div className="grid grid-cols-12">
       <input
         onChange={(e) => setValues(e.target.value)}
-        placeholder="*********"
-        className="rounded-xl text-lg border-2 h-10 mb-5 text-center border-white bg-blueSecondary/50"
+        placeholder="Código de acceso"
+        className="col-span-8 rounded-xl text-lg border-2 h-12 mb-5 px-2 right-10 border-white bg-blueSecondary/50"
         type="text"
       />
-      <div className="grid place-content-center">
         <button
           type="submit"
-          className="rounded-lg py-3 px-6 border-2 border-white bg-blueSecondary/50"
+          className="mx-2 col-span-4 rounded-lg mb-5 border-2 h-12 font-medium border-redborderbuttons bg-redbuttons"
         >
-          Comenzar
+          Ingresar
         </button>
-      </div>
+        </div>
     </form>
   );
 }

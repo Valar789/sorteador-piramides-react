@@ -6,14 +6,22 @@
  
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #839DE0;
+    background-image: url("../src/assets/bgbody.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #buttonAdd{
     background-color: #2678F3;
 }
 
 #welcome{
-    background-image: url('../src/assets/bg1.png');
+    background-image: url('../src/assets/bgwelcome.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#home{
+    background-image: url('../src/assets/bghome.png');
     background-repeat: no-repeat;
     background-size: cover;
 }

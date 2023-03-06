@@ -9,11 +9,11 @@ export default function NavBar() {
   };
 
   const navigateTemplates = () => {
-    navigate("/Templates")
+    navigate("/templates")
   }
 
   const navigateBoard = () => {
-    navigate("/Board")
+    navigate("/board")
   }
 
   return (
