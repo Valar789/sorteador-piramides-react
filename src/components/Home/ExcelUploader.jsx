@@ -5,6 +5,7 @@ import GlobalContext from "../../utils/GlobalContext";
 import { excelTypes } from "../../consts/excelTypes";
 import * as XLSX from "xlsx";
 import { useNavigate } from "react-router-dom";
+import icondowload from '../Home/icondowload.svg'
 
 export const ThemeContext = createContext();
 
@@ -51,7 +52,7 @@ export default function ExcelUploader() {
   };
 
   return (
-    <div className="h-screen flex items-center flex-col">
+    <div className="flex items-center flex-col">
       <form
         onSubmit={handleSubmit}
         className="flex items-center justify-center flex-col"
@@ -89,14 +90,15 @@ export default function ExcelUploader() {
             </span>
           </div>
           <div className="flex items-center justify-center my-10">
+          <img className="" src={icondowload} alt="" />
             <a
               href=""
-              className=" underline mx-3 my-3 border-redborderbuttons text-white p-3 rounded-xl"
+              className=" underline my-3 border-redborderbuttons text-white p-3 rounded-xl"
             >
               Descargar Plantilla de sorteos{" "}
             </a>
 
-            <button className="bg-redbuttons border-2 my-3 border-redborderbuttons text-white p-3 rounded-xl">
+            <button className="mx-3 bg-redbuttons border-2 my-3 border-redborderbuttons text-white p-3 rounded-xl">
               Comenzar
             </button>
           </div>
