@@ -23,6 +23,7 @@ export default function DataTable() {
 
   return (
     <Layout>
+      <div className="grid place-content-center h-full">
       <div className="text-white max-w-5xl">
         <div className="grid grid-cols-12 mb-4">
           <Finder
@@ -48,6 +49,7 @@ export default function DataTable() {
             Ver grupos
           </Link>
         </div>
+      </div>
       </div>
     </Layout>
   );
