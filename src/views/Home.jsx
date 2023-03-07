@@ -18,7 +18,7 @@ export default function Home() {
           <Loader />
         ) : (
           <div id="home" className="h-full grid place-content-center">
-            <h2 className="text-center py-14 text-white text-3xl font-bold">
+            <h2 className="text-center mt-16 py-10 text-white text-3xl font-bold">
               Cargar datos
             </h2>
             <ExcelUploader setIsLoading={setIsLoading}  setError={setError} />

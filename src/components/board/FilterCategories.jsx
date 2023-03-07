@@ -2,10 +2,10 @@ import React from "react";
 
 export default function FilterCategories() {
   return (
-    <div className="m-5 content-center mt-10">
+    <div className="content-center ">
       {/* Section Title and menu header*/}
       <div>
-      <h2 className="text-2xl font-bold text-white mt-20">Grupos de competidores</h2>
+      <h2 className="text-2xl font-bold text-white">Grupos de competidores</h2>
       <span className="px-16 font-bold text-white">2 de 18 grupos sorteados</span>
       </div>
       <div className="text-right">

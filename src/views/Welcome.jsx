@@ -1,33 +1,37 @@
 import React from "react";
 import Login from "../components/welcome/Login";
-import iconhapkido from "../assets/icons/iconhapkido.svg"
-import logofederacion from '../assets/logos/logofederacion.png'
-import logoqubulowhite from '../assets/logos/logoqubulowhite.png'
+import iconhapkido from "../assets/icons/iconhapkido.svg";
+import logofederacion from "../assets/logos/logofederacion.png";
+import logoqubulowhite from "../assets/logos/logoqubulowhite.png";
 
 export default function Welcome() {
   return (
-    <div id="welcome" className="h-screen text-white">
+    <div id="welcome" className="grid grid-cols-12 h-screen text-white">
+      <div className="col-span-6"></div>
       {/* section left */}
-      
-          <img className="fixed right-36 px-40 top-20" src={iconhapkido} alt="" />
-          <p className="fixed right-24 top-44 font-bold text-2xl  max-w-md">
-          Bienvenido al Sorteador de Pirámides de Competencias para Hapkido
-         </p>
+      <div className="col-span-6 flex flex-col justify-end   h-full">
+        <div className=" flex flex-col justify-center items-center py-12">
+          <img className="h-12 mb-4" src={iconhapkido} alt="" />
+          <p className="font-bold text-2xl mb-10  max-w-md">
+            Bienvenido al Sorteador de Pirámides de Competencias para Hapkido
+          </p>
 
-      
-      
-      {/* section Access */}
-      <Login />
+          {/* section Access */}
+          <Login />
+        </div>
+        {/* section Logos */}
+        <div className="flex  justify-center py-6 w-full  ">
+          <div className="mr-16">
+            <p className="col-span-6 text-sm mb-3">Un producto de:</p>
+            <img className="col-span-6  h-20 " src={logofederacion} alt="" />
+          </div>
 
-      {/* section Logos */}
-      <div className="fixed right-96 bottom-32 px-10">
-        <p className="text-sm">Un producto de:</p>
-        <img className="fixed h-20 m-4"src={logofederacion} alt="" />
+          <div>
+            <p className="col-span-6 text-sm mb-8">Desarrollado por:</p>
+            <img className="col-span-6   h-10  " src={logoqubulowhite} alt="" />
+          </div>
+        </div>
       </div>
-      <div className="fixed right-52 bottom-32">
-        <p className="text-sm">Desarrollado por:</p>
-        <img className="fixed h-10 m-4 bottom-9"src={logoqubulowhite} alt="" />
-      </div>
-      </div>
+    </div>
   );
 }

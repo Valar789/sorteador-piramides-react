@@ -21,11 +21,10 @@ export default function Login() {
   };
 
   return (
-    <div>
       
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col fixed bottom-64 right-52"
+      className="flex flex-col"
     >
       
       <h1 className="text-md text-left mb-3 font-normal">
@@ -48,6 +47,6 @@ export default function Login() {
         </button>
         </div>
     </form>
-    </div>
+
   );
 }

@@ -4,7 +4,7 @@ import { createContext } from "react";
 import GlobalContext from "../../utils/GlobalContext";
 import { excelTypes } from "../../consts/excelTypes";
 import * as XLSX from "xlsx";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import icondowload from '../../assets/icons/icondowload.svg'
 
 export const ThemeContext = createContext();
@@ -31,7 +31,7 @@ export default function ExcelUploader({setIsLoading , setError}) {
       setTimeout(() => {
         setIsLoading(false)
         navigate("/data");
-      }, 1500);
+      }, 1000);
  
     } else {
       setShowModal(true);
@@ -62,23 +62,27 @@ export default function ExcelUploader({setIsLoading , setError}) {
         onSubmit={handleSubmit}
         className="flex items-center justify-center flex-col"
       >
-        <div className="">
-          <label className="text-white font-normal text-left mx-48 text-lg mb-3">
+        <div className="max-w-xl">
+   
+          <div className="flex flex-col mb-12">
+          <label className="text-white font-normal  text-lg mb-2">
             Ingresa el nombre del evento: *
           </label>
-          <div className="flex items-center justify-center flex-col">
             <input
               required
               onChange={(e) => setNameEvent(e.target.value)}
-              className="rounded-xl text-white placeholder:text-white/30 pl-2 pr-80 backdrop-blur-md text-lg py-1 px-44 border-2 bg-white/20  border-white"
+              className="rounded-xl text-white placeholder:text-white/30 pl-2  backdrop-blur-md text-lg py-1  border-2 bg-white/20  border-white"
               type="text"
               placeholder="Nombre del evento"
             />
           </div>
-          <label className="text-white text-left block mb-2 my-9 mx-48 text-lg">
+
+
+
+          <div className="flex flex-col  gap-3 mb-3">
+          <label className="text-white text-left   text-lg">
             Carga el listado de competidores: *
           </label>
-          <div className="flex items-center justify-center flex-col gap-3 mb-3">
             <input
             required
               onChange={handleFileUpload}
@@ -89,14 +93,15 @@ export default function ExcelUploader({setIsLoading , setError}) {
             />
           </div>
           <div className="flex items-center justify-center">
-            <span className="w-2/3  text-center inline-block text-white text-sm">
+            <span className="text-center inline-block text-white text-sm">
               Verifica que el listado sea el correspondiente para sortear y que
               se encuentre en la estructura definida en formato Excel con
               extensión .XLSM o .XLSX.{" "}
             </span>
           </div>
-          <div className="flex items-center justify-center my-10">
-          <img className="" src={icondowload} alt="" />
+          <div className="flex flex-col items-center justify-center my-10">
+ <div className="flex">
+ <img className="" src={icondowload} alt="" />
             <a
               href=""
               className=" underline my-3 border-redborderbuttons text-white p-3 rounded-xl"
@@ -106,6 +111,8 @@ export default function ExcelUploader({setIsLoading , setError}) {
             <button className="mx-3 bg-redbuttons border-2 my-3 border-redborderbuttons text-white p-3 rounded-xl">
               Comenzar
             </button>
+ </div>
+ <Link className="text-white underline" to='/'>Cerrar sesión</Link>
           </div>
         </div>
   

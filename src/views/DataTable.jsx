@@ -6,6 +6,7 @@ import Layout from "../components/layout/Layout";
 import NavBar from "../components/layout/NavBar";
 import iconDivider from '../assets/icons/iconDivider.svg'
 import Loader from "../components/layout/Loader";
+import BreadCrumb from "../components/layout/BreadCrumb";
 
 export default function DataTable() {
   const [dataExcel, setDataExcel] = useState([]);
@@ -30,7 +31,7 @@ export default function DataTable() {
     setTimeout(() => {
      setIsLoading(false)
      navigate('/board')
-    }, 2000);
+    }, 1000);
 
   }
 
@@ -39,8 +40,10 @@ export default function DataTable() {
       {isLoading ? (
         <Loader />
       ) : 
-      <div className="grid place-content-center h-full">
+      <div className="grid place-content-center h-screen">
+
       <div className="text-white max-w-5xl">
+      <BreadCrumb/>
         <div className="grid grid-cols-12 mb-4">
           <Finder
             dataExcel={dataExcel}
