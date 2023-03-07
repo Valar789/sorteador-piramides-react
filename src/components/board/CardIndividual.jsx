@@ -31,48 +31,47 @@ export default function CardIndividual({ ready }) {
                     Nombre 
                   </td>
                 </tr>
-                <tr className="border-2 border-white">
-                  <th className="px-6 rounded-xl font-medium bg-bluePrimary text-white">
+                <tr className="">
+                  <th className="px-5 rounded-xl font-medium bg-white/20 text-white">
                     GRADO
                   </th>
-                  <td className="rounded-xl bg-blueSecondary text-white">
-                    Nombre del Grado
+                  <td className="rounded-xl px-6 border-white  bg-white/30 text-white">
+                    Nombre
                   </td>
                 </tr>
-                <tr className="border-2 border-white">
+                <tr className="">
                   <th
                     scope="row"
-                    className="rounded-xl font-medium bg-bluePrimary text-white"
+                    className="px-5 rounded-xl font-medium bg-white/20 text-white"
                   >
                     RAMA
                   </th>
-                  <td className="rounded-xl bg-blueSecondary text-white">
-                    Nombre de la Rama
+                  <td className="rounded-xl px-6 border-white  bg-white/30 text-white">
+                    Nombre
                   </td>
                 </tr>
-                <tr className="border-2 border-white">
+                <tr className="">
                   <th
                     scope="row"
-                    className="rounded-xl font-medium bg-bluePrimary text-white"
+                    className="px-5 rounded-xl font-medium bg-white/20 text-white"
                   >
                     DIVISIÓN   
                   </th>
-                  <td className="rounded-xl bg-blueSecondary text-white ">
-                    Nombre de la división
+                  <td className="rounded-xl px-6 border-white  bg-white/30 text-white">
+                    Nombre
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div>
-            <span className="grid grid-cols 12 justify-center">
+            <span className="grid grid-cols 12 justify-end">
               {ready ? (
                 <div>
-                  <button className="col-span-6">Ver sorteo</button>
-                  <p className="col-span-6">Sorteado</p>
+                  <button className="col-span-6 text-white p-3 underline">Ver sorteo</button>
                 </div>
               ) : (
-                <button className=" m-4 px-5 py-2 rounded-lg font-medium text-white shadow-lg bg-greenPrimary">
+                <button className=" m-4 px-5 py-2 rounded-lg font-medium text-white bg-redbuttons">
                   Sortear
                 </button>
               )}

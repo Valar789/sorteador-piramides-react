@@ -10,7 +10,7 @@ export default function Layout({ children }) {
 
   // Devuelve el componente que representa la estructura general de la página.
   return (
-    <div className=" fixed max-h-screen">
+    <div className="max-h-screen">
       {/* Mostrar el componente BreadCrumb si la ubicación es /data o /board */}
       {location.pathname === "/data" || location.pathname === "/board" ? <BreadCrumb /> : null}
       <section className="h-screen">

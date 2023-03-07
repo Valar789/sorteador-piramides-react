@@ -8,14 +8,14 @@ export default function Welcome() {
   return (
     <div id="welcome" className="h-screen text-white">
       {/* section left */}
-      <div className="fixed right-32 top-40">
-          <img className="px-40" src={iconhapkido} alt="" />
-          <p className="font-bold text-2xl  max-w-md">
+      
+          <img className="fixed right-36 px-40 top-20" src={iconhapkido} alt="" />
+          <p className="fixed right-24 top-44 font-bold text-2xl  max-w-md">
           Bienvenido al Sorteador de Pirámides de Competencias para Hapkido
          </p>
-      </div>
+
       
-    
+      
       {/* section Access */}
       <Login />
 
