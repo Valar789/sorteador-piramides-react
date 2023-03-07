@@ -14,7 +14,7 @@ export default function TablePositions() {
                 </td>
             </tr>
             <tr className="border border-gray-200 dark:border-gray-700">
-                <th scope="row" className="px-6  font-medium  bg-blueSecondary text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                <th scope="row" className="px-6  font-medium  bg-blueSecondary ">
                     Segundo puesto
                 </th>
                 <td className="border px-6 py-4">
@@ -22,7 +22,7 @@ export default function TablePositions() {
                 </td>
             </tr>
             <tr className="border border-gray-200 dark:border-gray-700">
-                <th scope="row" className="px-6 font-medium  bg-blueSecondary text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                <th scope="row" className="px-6 font-medium  bg-blueSecondary ">
                     Tercer puesto
                 </th>
                 <td className="border px-6 py-4">
@@ -30,7 +30,7 @@ export default function TablePositions() {
                 </td>
             </tr>
             <tr className="border border-gray-200 dark:border-gray-700">
-                 <th scope="row" className="px-6  font-medium   bg-blueSecondary text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                 <th scope="row" className="px-6  font-medium   bg-blueSecondary ">
                     Cuarto Puesto
                 </th>
                 <td className="border px-40 py-4">

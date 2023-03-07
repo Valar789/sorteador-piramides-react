@@ -1,74 +1,79 @@
-import React from "react";
+import React, { Fragment } from "react";
+import iconParticipants from "../../assets/icons/iconParticipants.svg";
+import iconGroup from "../../assets/icons/iconGroup.svg";
 
 export default function Table({ dataExcel, filteredPerson }) {
-  return (
-    <div className="h-64 overflow-auto bg-white  shadow-md sm:rounded-lg">
-      <div className="flex justify-end bg-bluePrimary p-3 text-white">
-        <h3>{filteredPerson.length} deportistas</h3>
+  const renderTableRows = ({
+    CodDep,
+    Delegación,
+    "Nombre Deportista": nombre,
+    Rama,
+    Categoría,
+    Grado,
+    División,
+    "CBTE IND": codigo,
+  }) => (
+    <Fragment key={CodDep}>
+      <div className="col-span-6 grid grid-cols-12 border-r border-t items-center">
+        <div className="py-1 col-span-2  pl-3 ">{CodDep}</div>
+        <div className="py-1 col-span-4">{Delegación}</div>
+        <div className="py-1 col-span-6">{nombre}</div>
       </div>
-      <table className="w-full text-center text-sm  text-gray-500 text-gray-400">
-        <thead className="bg-bluePrimary  text-white text-xs uppercase ">
-          <tr>
-            <th scope="col" className="px-6 py-3">
-            CodDep
-            </th>
-            <th scope="col" className="px-6 py-3">
-            Delegación
-            </th>
-            <th scope="col" className="px-6 py-3">
-            Nombre Deportista
-            </th>
-            <th scope="col" className="px-6 py-3">
-            Categoría
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Rama
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Grado
-            </th>
-            <th scope="col" className="px-6 py-3">
-              División
-            </th>
-            <th scope="col" className="px-6 py-3">
-            CBTE IND
-            </th>
-          </tr>
-        </thead>
-        <tbody className="">
-          {filteredPerson.length > 0
-            ? filteredPerson.map((deportista) => (
-                <tr
-                  key={deportista.CodDep}
-                  className="bg-white border-b bg-gray-800 border-gray-700 hover:bg-gray-50 hover:bg-gray-600"
-                >
-                  <td className="">{deportista["CodDep"]}</td>
-                  <td className="">{deportista["Delegación"]}</td>
-                  <td className="">{deportista["Nombre Deportista"]}</td>
-                  <td className="">{deportista["Categoría"]}</td>
-                  <td className="">{deportista["Rama"]}</td>
-                  <td className="">{deportista["Grado"]}</td>
-                  <td className="">{deportista["División"]}</td>
-                  <td className="">{deportista["CBTE IND"]}</td>
-                </tr>
-              ))
-            : dataExcel.map((deportista) => (
-                <tr
-                  key={deportista.CodDep}
-                  className="bg-white border-b bg-gray-800 border-gray-700 hover:bg-gray-50 hover:bg-gray-600"
-                >
-                  <td className="">{deportista["CodDep"]}</td>
-                  <td className="">{deportista["Delegación"]}</td>
-                  <td className="">{deportista["Nombre Deportista"]}</td>
-                  <td className="">{deportista["Categoría"]}</td>
-                  <td className="">{deportista["Rama"]}</td>
-                  <td className="">{deportista["Grado"]}</td>
-                  <td className="">{deportista["División"]}</td>
-                  <td className="">{deportista["CBTE IND"]}</td>
-                </tr>
-              ))}
-        </tbody>
-      </table>
-    </div>
+      <div className="col-span-6 grid grid-cols-12 border-t  items-center">
+        <div className="py-1 col-span-2  pl-3 ">{Rama}</div>
+        <div className="py-1 col-span-2">{Categoría}</div>
+        <div className="py-1 col-span-2">{Grado}</div>
+        <div className="py-1 col-span-2">{División}</div>
+        <div className="py-1 col-span-4">{codigo}</div>
+      </div>
+    </Fragment>
+  );
+
+  return (
+    <>
+      <div className="text-left grid grid-cols-12 text-sm ">
+        <div className="border-r h-24 font-semibold col-span-6 flex justify-center items-center gap-3">
+          <img className="h-6" src={iconParticipants} alt="iconParticipants" />
+          DATOS GENERALES COMPETIDORES
+        </div>
+        <div className=" h-24 col-span-6 font-semibold flex justify-center items-center gap-3">
+          <img className="h-6" src={iconGroup} alt="iconParticipants" />
+          CATEGORIAS
+        </div>
+        <div className="col-span-6 border-r grid grid-cols-12 bg-white/25">
+          <div scope="col" className="col-span-2 py-4 pl-3 font-normal">
+            No.
+          </div>
+          <div scope="col" className="col-span-4 py-4 font-normal">
+            DELEGACIÓN
+          </div>
+          <div scope="col" className="col-span-6 py-4 font-normal">
+            NOMBRES Y APELLIDOS
+          </div>
+        </div>
+        <div className="col-span-6 grid grid-cols-12 bg-white/25">
+          <div scope="col" className="col-span-2 py-4  pl-3  font-normal">
+            RAMA
+          </div>
+          <div scope="col" className="col-span-2 py-4 font-normal">
+            EDAD
+          </div>
+          <div scope="col" className="col-span-2 py-4 font-normal">
+            GRADO
+          </div>
+          <div scope="col" className="col-span-2 py-4 font-normal">
+            PESO
+          </div>
+          <div scope="col" className="col-span-4 py-4 font-normal">
+            CODIGO
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-12 text-xs  h-64 overflow-auto">
+        {filteredPerson.length > 0
+          ? filteredPerson.map(renderTableRows)
+          : dataExcel.map(renderTableRows)}
+      </div>
+    </>
   );
 }

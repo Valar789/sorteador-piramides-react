@@ -25,3 +25,37 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#board{
+  background-image: url('../src/assets/bgboard.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+thead{
+    background-color: rgb(255 255 255 / 0.25) 
+  }
+ 
+ /* ancho de la barra */
+::-webkit-scrollbar {
+    width: 1px;
+    height: 15px;   
+     
+    
+  }
+  
+  /* color de fondo de la barra */
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  /* color del relleno de la barra */
+  ::-webkit-scrollbar-thumb {
+    background-color: #555;
+  }
+  
+  /* color del relleno de la barra cuando está en hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+  }
+  

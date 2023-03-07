@@ -2,31 +2,33 @@ import React from "react";
 
 export default function CardIndividual({ ready }) {
   return (
-    <div className=" m-6 max-w-md bg-white border border-gray-200 rounded-lg shadow">
-      <div className="text-center grid grid-cols-12 p-4 rounded-lg bg-bluePrimary">
+    <div className=" m-6 max-w-md bg-white/20 border-2 border-gray-200 rounded-lg shadow">
+      {/*Card exterior*/}
+      <div className="text-center grid grid-cols-12 p-4 rounded-lg border-b-2 bg-white/30">
         <div className=" col-span-6">
           <p className="font-medium text-white"> Grupo</p>
         </div>
         <div className="col-span-6">
-          <p className="text-white"> cantidad deportista</p>
+          <p className="text-white font-normal"> cantidad deportista</p>
         </div>
       </div>
 
+      {/*Card interior*/}
       <div className="p-2 grid  grid-cols-12">
-        <div className="col-span-6">lista participantes</div>
+        <div className="col-span-6 text-white">lista participantes</div>
         <div className="col-span-6">
-          <div className="m-2">
+          <div className="">
             <table className="text-center">
               <tbody className="text-sm">
-                <tr className="border-2 border-white">
+                <tr className="">
                   <th
                     scope="row"
-                    className="p-2 rounded-xl font-medium bg-bluePrimary text-white"
+                    className=" px-5 rounded-xl font-medium bg-white/20 text-white"
                   >
                     CATEGORÍA
                   </th>
-                  <td className="rounded-xl border-white  bg-blueSecondary text-white">
-                    Nombre de la categoría
+                  <td className="rounded-xl px-6 border-white  bg-white/30 text-white">
+                    Nombre 
                   </td>
                 </tr>
                 <tr className="border-2 border-white">
@@ -53,7 +55,7 @@ export default function CardIndividual({ ready }) {
                     scope="row"
                     className="rounded-xl font-medium bg-bluePrimary text-white"
                   >
-                    DIVISIÓN
+                    DIVISIÓN   
                   </th>
                   <td className="rounded-xl bg-blueSecondary text-white ">
                     Nombre de la división
