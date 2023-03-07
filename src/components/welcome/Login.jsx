@@ -21,13 +21,17 @@ export default function Login() {
   };
 
   return (
+    <div>
+      
     <form
       onSubmit={handleSubmit}
-      className="flex w-96  flex-col fixed bottom-96 right-52 "
+      className="flex flex-col fixed bottom-64 right-52"
     >
-      <h1 className="text-lg mb-3 font-normal">
+      
+      <h1 className="text-md text-left mb-3 font-normal">
         Ingresa tu código de acceso
       </h1>
+      
 
       <div className="grid grid-cols-12">
       <input
@@ -44,5 +48,6 @@ export default function Login() {
         </button>
         </div>
     </form>
+    </div>
   );
 }
