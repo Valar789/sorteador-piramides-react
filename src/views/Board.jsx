@@ -1,22 +1,21 @@
 import React from "react";
 import CardsBoard from "../components/board/CardsBoard";
- 
-import FilterCategories from "../components/board/FilterCategories";
+
+import HeaderBoard from "../components/board/HeaderBoard";
+import SelectFliter from "../components/board/SelectFilter";
 import BreadCrumb from "../components/layout/BreadCrumb";
 
 import Layout from "../components/layout/Layout";
- 
 
 export default function Board() {
   return (
-    <div id="board" className=" h-screen grid place-content-center pt-28">
     <Layout>
-    <div className="max-w-5xl">
-      <BreadCrumb/>
-    <FilterCategories />
-      <CardsBoard />
-    </div>
+      <div id="board" className="px-32 pt-10 text-white bg-red-200">
+        <BreadCrumb />
+        <HeaderBoard />
+        <SelectFliter/>
+        <CardsBoard />
+      </div>
     </Layout>
-    </div>
   );
 }

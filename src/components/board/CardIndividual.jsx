@@ -2,9 +2,9 @@ import React from "react";
 
 export default function CardIndividual({ ready }) {
   return (
-    <div className=" m-6 max-w-md bg-white/20 border-2 border-gray-200 rounded-lg shadow">
+    <div className="col-span-6 mx-3 my-3  bg-white/20 border-2 border-gray-200 rounded-2xl shadow">
       {/*Card exterior*/}
-      <div className="text-center grid grid-cols-12 p-4 rounded-lg border-b-2 bg-white/30">
+      <div className="text-center grid grid-cols-12 p-4 border-b-2 rounded-t-2xl bg-white/30">
         <div className=" col-span-6">
           <p className="font-medium text-white"> Grupo</p>
         </div>

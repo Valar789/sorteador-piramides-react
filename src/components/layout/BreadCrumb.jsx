@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 export default function BreadCrumb() {
   const location = useLocation();
   return (
-    <nav className="my-7 text-white" aria-label="Breadcrumb">
+    <nav className="py-7 " aria-label="Breadcrumb">
       <ol className="inline-flex items-center gap-3">
         <li className="inline-flex items-center">
           <Link
