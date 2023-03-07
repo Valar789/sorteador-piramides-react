@@ -6,6 +6,9 @@ module.exports = {
  
   ],
   theme: {
+    fill: {
+      'orange-gradient': 'linear-gradient(to right, #ff8c00, #ffaf5f)',
+    },
     extend: {
       colors: {
         redborderbuttons: '#820E17',
