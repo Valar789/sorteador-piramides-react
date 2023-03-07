@@ -55,7 +55,7 @@ export default function CardIndividual({ ready }) {
                     scope="row"
                     className="rounded-xl font-medium bg-bluePrimary text-white"
                   >
-                    DIVISIÓN 
+                    DIVISIÓN   
                   </th>
                   <td className="rounded-xl bg-blueSecondary text-white ">
                     Nombre de la división
