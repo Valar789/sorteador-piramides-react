@@ -5,7 +5,7 @@ import GlobalContext from "../../utils/GlobalContext";
 import { excelTypes } from "../../consts/excelTypes";
 import * as XLSX from "xlsx";
 import { useNavigate } from "react-router-dom";
-import icondowload from '../Home/icondowload.svg'
+import icondowload from '../../assets/icons/icondowload.svg'
 
 export const ThemeContext = createContext();
 
@@ -65,7 +65,7 @@ export default function ExcelUploader() {
             <input
               required
               onChange={(e) => setNameEvent(e.target.value)}
-              className="rounded-xl placeholder:text-white/80 pl-2 pr-80 backdrop-blur-md text-lg py-1 px-44 border-2 bg-white/20 backdrop-blur-sm border-white"
+              className="rounded-xl text-white placeholder:text-white/30 pl-2 pr-80 backdrop-blur-md text-lg py-1 px-44 border-2 bg-white/20  border-white"
               type="text"
               placeholder="Nombre del evento"
             />
@@ -79,7 +79,7 @@ export default function ExcelUploader() {
               type="file"
               name="FileAttachment"
               id="FileAttachment"
-              className="pl-0 pr-44 relative file:text-white file:border-r-white file:bg-white/30 file:h-10  file:border-r-4 file:border-l-0 file:border-y-0 file:rounded-xl rounded-xl text-lg text-white px-24 border-2  bg-white/50 border-white"
+              className="pl-0 pr-44 relative file:text-white file:border-r-white file:bg-white/30 file:h-10  file:border-r-4 file:border-l-0 file:border-y-0 file:rounded-xl rounded-xl text-lg text-white px-24 border-2  bg-white/30 border-white"
             />
           </div>
           <div className="flex items-center justify-center">
@@ -97,7 +97,6 @@ export default function ExcelUploader() {
             >
               Descargar Plantilla de sorteos{" "}
             </a>
-
             <button className="mx-3 bg-redbuttons border-2 my-3 border-redborderbuttons text-white p-3 rounded-xl">
               Comenzar
             </button>

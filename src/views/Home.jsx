@@ -6,11 +6,11 @@ import logoqubulowhite from '../assets/logos/logoqubulowhite.png'
 export default function Home() {
   return (
     <Layout>
-      <div id="home" className="h-full grid place-content-center">
-        <h2 className="text-center py-14 text-white text-3xl font-bold">
+      <div id="home" className="h-screen py-32 ">
+        <h2 className="text-center py-10 text-white text-3xl font-bold">
           Cargar datos
         </h2>
-        <ExcelUploader />
+        <ExcelUploader/>
         <img
           className="absolute bottom-8 right-8 h-16"
           src={logoqubulowhite}
