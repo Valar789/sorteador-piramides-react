@@ -20,11 +20,11 @@ export default function Table({ dataExcel, filteredPerson }) {
         <div className="py-1 col-span-6">{nombre}</div>
       </div>
       <div className="col-span-6 grid grid-cols-12 border-t  items-center">
-        <div className="py-1 col-span-2  pl-3 ">{Rama}</div>
+        <div className="py-1 col-span-3  pl-3 ">{Rama}</div>
         <div className="py-1 col-span-2">{Categoría}</div>
-        <div className="py-1 col-span-2">{Grado}</div>
+        <div className="py-1 col-span-3">{Grado}</div>
         <div className="py-1 col-span-2">{División}</div>
-        <div className="py-1 col-span-4">{codigo}</div>
+        <div className="py-1 col-span-2 pr-4 ">{codigo}</div>
       </div>
     </Fragment>
   );
@@ -52,24 +52,24 @@ export default function Table({ dataExcel, filteredPerson }) {
           </div>
         </div>
         <div className="col-span-6 grid grid-cols-12 bg-white/25">
-          <div scope="col" className="col-span-2 py-4  pl-3  font-normal">
+          <div scope="col" className="col-span-3 py-4  pl-3  font-normal">
             RAMA
           </div>
           <div scope="col" className="col-span-2 py-4 font-normal">
             EDAD
           </div>
-          <div scope="col" className="col-span-2 py-4 font-normal">
+          <div scope="col" className="col-span-3 py-4 font-normal">
             GRADO
           </div>
           <div scope="col" className="col-span-2 py-4 font-normal">
             PESO
           </div>
-          <div scope="col" className="col-span-4 py-4 font-normal">
+          <div scope="col" className="col-span-2 py-4  font-normal">
             CODIGO
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-12 text-xs  h-64 overflow-auto">
+      <div className="grid grid-cols-12 text-xs  h-60 overflow-auto">
         {filteredPerson.length > 0
           ? filteredPerson.map(renderTableRows)
           : dataExcel.map(renderTableRows)}

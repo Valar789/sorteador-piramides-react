@@ -44,7 +44,7 @@ export default function Finder({
           onChange={handleSearch}
           type="text"
           id="table-search"
-          className="pl-10 py-3 border text-sm rounded-md bg-white/25  w-full "
+          className="pl-10 py-2 border text-sm rounded-md bg-white/25  w-full "
           placeholder="Buscar competidores, delegaciones, edad..."
         />
       </div>

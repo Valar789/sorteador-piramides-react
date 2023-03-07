@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import ModalError from "./ModalError";
+ 
 import { createContext } from "react";
 import GlobalContext from "../../utils/GlobalContext";
 import { excelTypes } from "../../consts/excelTypes";
@@ -9,9 +9,9 @@ import icondowload from '../../assets/icons/icondowload.svg'
 
 export const ThemeContext = createContext();
 
-export default function ExcelUploader() {
+export default function ExcelUploader({setIsLoading , setError}) {
   const [nameEvent, setNameEvent] = useState("");
-  const [showModal, setShowModal] = useState(false);
+ 
   const [excelFile, setExcelFile] = useState(null);
 
   const navigate = useNavigate();
@@ -27,7 +27,12 @@ export default function ExcelUploader() {
       const json = JSON.stringify(data);
       localStorage.setItem("excelData", json);
       localStorage.setItem("nameEvent", nameEvent);
-      navigate("/data");
+      setIsLoading(true)
+      setTimeout(() => {
+        setIsLoading(false)
+        navigate("/data");
+      }, 1500);
+ 
     } else {
       setShowModal(true);
     }
@@ -44,7 +49,7 @@ export default function ExcelUploader() {
           setExcelFile(e.target.result);
         };
       } else {
-        setShowModal(true);
+        setError(true);
       }
     } else {
       console.log("plz select your file");
@@ -75,6 +80,7 @@ export default function ExcelUploader() {
           </label>
           <div className="flex items-center justify-center flex-col gap-3 mb-3">
             <input
+            required
               onChange={handleFileUpload}
               type="file"
               name="FileAttachment"
@@ -103,7 +109,7 @@ export default function ExcelUploader() {
             </button>
           </div>
         </div>
-        {showModal && <ModalError setShowModal={setShowModal} />}
+  
       </form>
       </div>
   );
