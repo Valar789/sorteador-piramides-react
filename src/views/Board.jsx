@@ -10,7 +10,7 @@ import Layout from "../components/layout/Layout";
 export default function Board() {
   return (
     <Layout>
-      <div id="board" className="px-32 pt-10 text-white bg-red-200">
+      <div id="board" className="px-32 pt-10 text-white ">
         <BreadCrumb />
         <HeaderBoard />
         <SelectFliter/>
