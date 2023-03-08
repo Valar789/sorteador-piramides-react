@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 const selectFilters = [
+  "Delegación",
+  "Categoría",
   "Rama",
-  "Edad",
   "Grado",
-  "Peso",
-  "Codigo",
-  "Estado",
+  "División",
+  "CBTE IND",
+  "Estado"
 ];
 export default function SelectFliter() {
   const [data, setData] = useState([])
@@ -14,7 +15,6 @@ export default function SelectFliter() {
 useEffect(() => {
   const dataFromLocalStorage = JSON.parse(localStorage.getItem("excelData"));
   setData(dataFromLocalStorage);
-  
   //recibe data (json) y retorna un objeto 
   function obtenerPropiedadesUnicas() {
     let propiedades = {};
@@ -36,25 +36,25 @@ useEffect(() => {
   }
   const res = obtenerPropiedadesUnicas()
   setValuesSelect(res)
-  
 }, [])
 
-console.log(valuesSelect);
 
 
   return (
     <div className="flex items-center justify-center min-w-full mb-16">
       <div className="flex flex-col ">
         <div className="flex">
-          {selectFilters.map((filter, i) => (
+        {selectFilters.map((filter, i) => (
             <div key={i} className="flex flex-col mx-5">
               <label className="mb-2 text-sm font-medium text-center">{filter}</label>
               <select className="w-36 border-2 bg-white/20  rounded-lg py-3 px-4 shadow-lg text-sm">
-                <option value>Escoge un Código</option>
-                <option value="">Opcion 1</option>
-                <option value="">Opcion 2</option>
-                <option value="">Opcion 3</option>
-                <option value="">Opcion 4</option>
+                <option value="">Escoge un Código</option>
+                {valuesSelect[filter] &&
+                  valuesSelect[filter].map((option, j) => (
+                    <option key={j} value={option}>
+                      {option}
+                    </option>
+                  ))}
               </select>
             </div>
           ))}
