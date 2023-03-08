@@ -8,7 +8,7 @@ const selectFilters = [
   "CBTE IND",
   "Estado"
 ];
-export default function SelectFliter() {
+export default function SelectFliter({setparticipantsForCode}) {
   const [data, setData] = useState([])
   const [valuesSelect, setValuesSelect] = useState({})
 
@@ -35,7 +35,23 @@ useEffect(() => {
     return propiedades;
   }
   const res = obtenerPropiedadesUnicas()
-  setValuesSelect(res)
+
+  const datosPorCodigo = [{}];
+  dataFromLocalStorage.forEach(deportista => {
+  const codigo = deportista["CBTE IND"];
+  if (!datosPorCodigo[codigo]) {
+    datosPorCodigo[codigo] = [];
+  }
+  datosPorCodigo[codigo].push(deportista);
+});
+
+console.log(datosPorCodigo);
+
+  // res["CBTE IND"] // es una listo de codigos unicos
+  // const resultadosPorCodigo = dataFromLocalStorage.filter() //filtras
+  // setValuesSelect(res)
+
+
 }, [])
 
 

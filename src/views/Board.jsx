@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CardsBoard from "../components/board/CardsBoard";
 
 import HeaderBoard from "../components/board/HeaderBoard";
@@ -8,12 +8,15 @@ import BreadCrumb from "../components/layout/BreadCrumb";
 import Layout from "../components/layout/Layout";
 
 export default function Board() {
+
+  const [participantsForCode, setparticipantsForCode] = useState([])
+
   return (
     <Layout>
       <div id="board" className="px-32 pt-10 text-white bg-red-200">
         <BreadCrumb />
         <HeaderBoard />
-        <SelectFliter/>
+        <SelectFliter setparticipantsForCode={setparticipantsForCode}/>
         <CardsBoard />
       </div>
     </Layout>
