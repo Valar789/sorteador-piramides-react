@@ -6,7 +6,6 @@ import { useLocation } from "react-router-dom";
 export default function Layout({ children }) {
   // Obtener la ubicación actual de la página.
   const location = useLocation();
-  console.log(location.pathname);
 
   // Devuelve el componente que representa la estructura general de la página.
   return (

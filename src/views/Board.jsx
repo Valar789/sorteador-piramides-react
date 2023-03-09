@@ -11,8 +11,6 @@ export default function Board() {
   const [keysCode, setKeysCode] = useState([]);
   const [groupsByCode, setgroupsByCode] = useState({})
 
-
-
   return (
     <Layout>
       <div id="board" className="px-32 pt-10 text-white ">

@@ -4,7 +4,6 @@ export default function CardIndividual({ keyName, groupByCode }) {
   const [isReady, setIsReady] = useState(false);
   const handleIsReady = () => setIsReady(true);
 
-  console.log(groupByCode);
   return (
     <div className="col-span-6 mx-3 my-3  bg-white/20 border-2 border-gray-200 rounded-2xl shadow">
       {/*Card exterior*/}
@@ -24,7 +23,7 @@ export default function CardIndividual({ keyName, groupByCode }) {
         <div className="col-span-6 text-white p-2">
           <ul className="h-36 overflow-auto">
             {groupByCode.map((deportista, index) => (
-              <div className="">
+              <div key={index} className="">
                 <li className="text-sm">
                   {index + 1} {deportista["Nombre Deportista"]}
                 </li>

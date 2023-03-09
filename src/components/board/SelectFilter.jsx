@@ -4,15 +4,17 @@ import { createGroupsByCode } from "../../utils/createGroupsByCode";
 import { getLocalStorage } from "../../utils/getLocalStorage";
 import obtenerPropiedadesUnicas from "../../utils/obtenerPropiedadesUnicas";
 
-export default function SelectFliter({ setKeysCode,setgroupsByCode }) {
+export default function SelectFliter({ setKeysCode, setgroupsByCode }) {
   const [valuesSelect, setValuesSelect] = useState({});
 
   useEffect(() => {
     const dataFromLocalStorage = getLocalStorage("excelData");
     const valuesUniques = obtenerPropiedadesUnicas(dataFromLocalStorage);
     setValuesSelect(valuesUniques);
+
     const groupsByCode = createGroupsByCode(dataFromLocalStorage);
     setgroupsByCode(groupsByCode)
+
     const keys = Object.keys(groupsByCode)
     setKeysCode(keys)
   }, []);

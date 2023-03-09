@@ -4,7 +4,6 @@ import CardIndividual from "./CardIndividual";
 export default function CardsBoard({ keysCode, groupsByCode}) {
   const [isLoad, setisLoad] = useState(false);
 
-
   useEffect(() => {
     keysCode.length > 0 && groupsByCode ? setisLoad(true) : null;
   }, [keysCode, groupsByCode]);
