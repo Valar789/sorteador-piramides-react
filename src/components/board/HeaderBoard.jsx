@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../layout/NavBar";
 
-export default function HeaderBoard() {
+export default function HeaderBoard({amount}) {
   return (
     <div className="flex justify-between  mb-12">
       {/* Section Title and menu header*/}
@@ -10,7 +10,7 @@ export default function HeaderBoard() {
           Grupos de competidores
         </h2>
         <span className="flex justify-end font-bold ">
-          2 de 18 grupos sorteados
+          2 de {amount} grupos sorteados
         </span>
       </div>
       <div className="text-right">

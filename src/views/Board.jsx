@@ -8,16 +8,16 @@ import BreadCrumb from "../components/layout/BreadCrumb";
 import Layout from "../components/layout/Layout";
 
 export default function Board() {
-
-  const [participantsForCode, setparticipantsForCode] = useState([])
+  const [keysCode, setKeysCode] = useState([]);
+  const [groupsByCode, setgroupsByCode] = useState({})
 
   return (
     <Layout>
       <div id="board" className="px-32 pt-10 text-white ">
         <BreadCrumb />
-        <HeaderBoard />
-        <SelectFliter setparticipantsForCode={setparticipantsForCode}/>
-        <CardsBoard />
+        <HeaderBoard amount={keysCode.length} />
+        <SelectFliter setKeysCode={setKeysCode} setgroupsByCode={setgroupsByCode} />
+        <CardsBoard groupsByCode={groupsByCode} keysCode={keysCode} />
       </div>
     </Layout>
   );

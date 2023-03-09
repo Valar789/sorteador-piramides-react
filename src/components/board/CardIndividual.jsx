@@ -1,21 +1,29 @@
 import React from "react";
 
-export default function CardIndividual({ ready }) {
+export default function CardIndividual({keyName, groupByCode}) {
+  console.log(groupByCode);
   return (
     <div className="col-span-6 mx-3 my-3  bg-white/20 border-2 border-gray-200 rounded-2xl shadow">
       {/*Card exterior*/}
       <div className="text-center grid grid-cols-12 p-4 border-b-2 rounded-t-2xl bg-white/30">
         <div className=" col-span-6">
-          <p className="font-medium text-white"> Grupo</p>
+          <p className="font-medium text-white"> Grupo {keyName}</p>
         </div>
         <div className="col-span-6">
-          <p className="text-white font-normal"> cantidad deportista</p>
+          <p className="text-white font-normal"> Cantidad deportistas {groupByCode.length}</p>
         </div>
       </div>
 
       {/*Card interior*/}
       <div className="p-2 grid  grid-cols-12">
-        <div className="col-span-6 text-white">lista participantes</div>
+        <div className="col-span-6 text-white p-2">
+          <ul className="h-36 overflow-auto">
+          {groupByCode.map((deportista)=> (<li>{deportista["Nombre Deportista"]}</li>))}
+          </ul>
+ 
+        </div>
+
+
         <div className="col-span-6">
           <div className="">
             <table className="text-center">
@@ -28,7 +36,7 @@ export default function CardIndividual({ ready }) {
                     CATEGORÍA
                   </th>
                   <td className="rounded-xl px-6 border-white  bg-white/30 text-white">
-                    Nombre 
+                   {groupByCode[0]["Categoría"]}
                   </td>
                 </tr>
                 <tr className="">
@@ -36,7 +44,7 @@ export default function CardIndividual({ ready }) {
                     GRADO
                   </th>
                   <td className="rounded-xl px-6 border-white  bg-white/30 text-white">
-                    Nombre
+                  {groupByCode[0]["Grado"]}
                   </td>
                 </tr>
                 <tr className="">
@@ -47,7 +55,8 @@ export default function CardIndividual({ ready }) {
                     RAMA
                   </th>
                   <td className="rounded-xl px-6 border-white  bg-white/30 text-white">
-                    Nombre
+                  {groupByCode[0]["Rama"]}
+                
                   </td>
                 </tr>
                 <tr className="">
@@ -58,7 +67,7 @@ export default function CardIndividual({ ready }) {
                     DIVISIÓN   
                   </th>
                   <td className="rounded-xl px-6 border-white  bg-white/30 text-white">
-                    Nombre
+                  {groupByCode[0]["División"]}
                   </td>
                 </tr>
               </tbody>
@@ -66,7 +75,7 @@ export default function CardIndividual({ ready }) {
           </div>
           <div>
             <span className="grid grid-cols 12 justify-end">
-              {ready ? (
+              {false ? (
                 <div>
                   <button className="col-span-6 text-white p-3 underline">Ver sorteo</button>
                 </div>

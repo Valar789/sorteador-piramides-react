@@ -1,17 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CardIndividual from "./CardIndividual";
-const list=[
-  1,2,3,4,5,6,7,8,
-]
 
-export default function CardsBoard() {
+export default function CardsBoard({ keysCode, groupsByCode }) {
+  const [isLoad, setisLoad] = useState(false);
+
+  useEffect(() => {
+    keysCode.length > 0 && groupsByCode ? setisLoad(true) : null;
+  }, [keysCode, groupsByCode]);
+
   return (
- <div className="grid grid-cols-12">
-  {
-    list.map((card, i) =>(
-      <CardIndividual key={i} ready={false} />
-    ))
-  }
- </div>
+    <div className="grid grid-cols-12">
+      {isLoad ? (
+        keysCode.map((key) => (
+          <CardIndividual key={key} keyName={key} groupByCode={groupsByCode[key]}/>
+          // <div key={key}>
+          //   {groupsByCode[key] &&
+          //     groupsByCode[key].map((deportista) => <h1>deportista</h1>)}
+          // </div>
+        ))
+      ) : (
+        // Loader
+        <div className="col-span-12 grid place-content-center">
+          <svg
+            className="animate-spin h-12 w-12"
+            viewBox="0 0 24 24"
+            style={{ animationDuration: "0.75s" }}
+          >
+            <defs>
+              <linearGradient id="gradient" x1="0" x2="1">
+                <stop offset="0%" stopColor="#FF3602" />
+                <stop offset="100%" stopColor="#FFF" />
+              </linearGradient>
+            </defs>
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="url(#gradient)"
+              strokeWidth="3"
+              fill="none"
+              strokeDasharray="80 50"
+            />
+          </svg>
+        </div>
+      )}
+    </div>
   );
 }

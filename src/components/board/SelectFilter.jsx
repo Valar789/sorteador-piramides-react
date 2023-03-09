@@ -1,68 +1,31 @@
 import React, { useEffect, useState } from "react";
-const selectFilters = [
-  "Delegación",
-  "Categoría",
-  "Rama",
-  "Grado",
-  "División",
-  "CBTE IND",
-  "Estado"
-];
-export default function SelectFliter({setparticipantsForCode}) {
-  const [data, setData] = useState([])
-  const [valuesSelect, setValuesSelect] = useState({})
+import { selectFiltersKeys } from "../../consts/selectFiltersKeys";
+import { createGroupsByCode } from "../../utils/createGroupsByCode";
+import { getLocalStorage } from "../../utils/getLocalStorage";
+import obtenerPropiedadesUnicas from "../../utils/obtenerPropiedadesUnicas";
 
-useEffect(() => {
-  const dataFromLocalStorage = JSON.parse(localStorage.getItem("excelData"));
-  setData(dataFromLocalStorage);
-  //recibe data (json) y retorna un objeto 
-  function obtenerPropiedadesUnicas() {
-    let propiedades = {};
-    dataFromLocalStorage.forEach((obj) => {
-      for (let key in obj) {
-        if (key !== "CodDep" && key !== "Nombre Deportista" && key !== "Doc. Identificación") {
-          let value = obj[key];
-          if (Array.isArray(propiedades[key])) {
-            if (!propiedades[key].includes(value)) {
-              propiedades[key].push(value);
-            }
-          } else {
-            propiedades[key] = [value];
-          }
-        }
-      }
-    });
-    return propiedades;
-  }
-  const res = obtenerPropiedadesUnicas()
+export default function SelectFliter({ setKeysCode,setgroupsByCode }) {
+  const [valuesSelect, setValuesSelect] = useState({});
 
-  const datosPorCodigo = [{}];
-  dataFromLocalStorage.forEach(deportista => {
-  const codigo = deportista["CBTE IND"];
-  if (!datosPorCodigo[codigo]) {
-    datosPorCodigo[codigo] = [];
-  }
-  datosPorCodigo[codigo].push(deportista);
-});
-
-console.log(datosPorCodigo);
-
-  // res["CBTE IND"] // es una listo de codigos unicos
-  // const resultadosPorCodigo = dataFromLocalStorage.filter() //filtras
-  // setValuesSelect(res)
-
-
-}, [])
-
-
+  useEffect(() => {
+    const dataFromLocalStorage = getLocalStorage("excelData");
+    const valuesUniques = obtenerPropiedadesUnicas(dataFromLocalStorage);
+    setValuesSelect(valuesUniques);
+    const groupsByCode = createGroupsByCode(dataFromLocalStorage);
+    setgroupsByCode(groupsByCode)
+    const keys = Object.keys(groupsByCode)
+    setKeysCode(keys)
+  }, []);
 
   return (
     <div className="flex items-center justify-center min-w-full mb-16">
       <div className="flex flex-col ">
         <div className="flex">
-        {selectFilters.map((filter, i) => (
+          {selectFiltersKeys.map((filter, i) => (
             <div key={i} className="flex flex-col mx-5">
-              <label className="mb-2 text-sm font-medium text-center">{filter}</label>
+              <label className="mb-2 text-sm font-medium text-center">
+                {filter}
+              </label>
               <select className="w-36 border-2 bg-white/20  rounded-lg py-3 px-4 shadow-lg text-sm">
                 <option value=""></option>
                 {valuesSelect[filter] &&
