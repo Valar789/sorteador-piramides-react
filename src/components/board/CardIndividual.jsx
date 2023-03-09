@@ -19,8 +19,8 @@ export default function CardIndividual({ keyName, groupByCode }) {
       </div>
 
       {/*Card interior*/}
-      <div className="p-2 grid  grid-cols-12">
-        <div className="col-span-6 text-white p-2">
+      <div className="p-2 grid grid-cols-12 text-white">
+        <div className="col-span-6 ">
           <ul className="h-36 overflow-auto">
             {groupByCode.map((deportista, index) => (
               <div key={index} className="">
@@ -35,49 +35,59 @@ export default function CardIndividual({ keyName, groupByCode }) {
 
         <div className="col-span-6">
           <div className="">
-            <table className="text-center">
-              <tbody className="text-sm">
+            <table className="">
+              <tbody className=" text-sm">
+              <div>
+                <div className="m-2 bg-white/30 rounded-lg">
                 <tr className="">
                   <th
                     scope="row"
-                    className=" px-5 rounded-xl font-medium bg-white/20 text-white"
+                    className=" px-5"
                   >
                     CATEGORÍA
                   </th>
-                  <td className="rounded-xl px-6 border-white  bg-white/30 text-white">
+                  <td className=" px-6 rounded-lg bg-white/30">
                     {groupByCode[0]["Categoría"]}
                   </td>
                 </tr>
+                </div>
+                <div className="m-2 bg-white/30 rounded-lg">
                 <tr className="">
-                  <th className="px-5 rounded-xl font-medium bg-white/20 text-white">
+                  <th className="px-10 font-medium">
                     GRADO
                   </th>
-                  <td className="rounded-xl px-6 border-white  bg-white/30 text-white">
+                  <td className="px-6 rounded-lg bg-white/30">
                     {groupByCode[0]["Grado"]}
                   </td>
                 </tr>
+                </div>
+                <div className="m-2 bg-white/30 rounded-lg">
                 <tr className="">
                   <th
                     scope="row"
-                    className="px-5 rounded-xl font-medium bg-white/20 text-white"
+                    className="px-5 font-medium "
                   >
                     RAMA
                   </th>
-                  <td className="rounded-xl px-6 border-white  bg-white/30 text-white">
+                  <td className="px-6 rounded-lg bg-white/30">
                     {groupByCode[0]["Rama"]}
                   </td>
                 </tr>
+                </div>
+                <div className="m-2 bg-white/30 rounded-lg">
                 <tr className="">
                   <th
                     scope="row"
-                    className="px-5 rounded-xl font-medium bg-white/20 text-white"
+                    className="px-5 font-medium "
                   >
                     DIVISIÓN
                   </th>
-                  <td className="rounded-xl px-6 border-white  bg-white/30 text-white">
+                  <td className="px-6 rounded-lg bg-white/30">
                     {groupByCode[0]["División"]}
                   </td>
                 </tr>
+                </div>
+                </div>
               </tbody>
             </table>
           </div>
