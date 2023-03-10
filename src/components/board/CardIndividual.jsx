@@ -51,8 +51,8 @@ export default function CardIndividual({ keyName, groupByCode }) {
           </ul>
         </div>
 
-        <div className="col-span-6 w-min">
-          <div className="grid grid-cols-12 my-2 bg-white/30 mx-8 rounded-lg w-72 ">
+        <div className="col-span-6 p-2">
+          <div className="grid grid-cols-12 my-2 bg-white/30  rounded-lg ">
             <div className="col-span-6">
               <p className="mx-2 font-medium">CATEGORÍA:</p>
             </div>
@@ -64,7 +64,7 @@ export default function CardIndividual({ keyName, groupByCode }) {
             </div>
           </div>
 
-          <div className="grid grid-cols-12 my-2 bg-white/30 mx-8 rounded-lg w-72">
+          <div className="grid grid-cols-12 my-2 bg-white/30  rounded-lg ">
             <div className="col-span-6">
               <p className="mx-2 font-medium">GRADO:</p>
             </div>
@@ -77,7 +77,7 @@ export default function CardIndividual({ keyName, groupByCode }) {
               </div>
 
             
-            <div className="grid grid-cols-12 my-2 bg-white/30 mx-8 rounded-lg w-72 ">
+            <div className="grid grid-cols-12 my-2 bg-white/30  rounded-lg ">
             <div className="col-span-6">
               <p className="mx-2 font-medium">RAMA:</p>
             </div>
@@ -89,7 +89,7 @@ export default function CardIndividual({ keyName, groupByCode }) {
             </div>
             </div>
 
-            <div className="grid grid-cols-12 my-2 bg-white/30 mx-8 rounded-lg w-72 ">
+            <div className="grid grid-cols-12 my-2 bg-white/30  rounded-lg ">
             <div className="col-span-6">
               <p className="mx-2 font-medium">DIVISIÓN:</p>
             </div>
