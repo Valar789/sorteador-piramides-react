@@ -1,10 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+ 
 body {
-    background-color: #839DE0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url("../src/assets/bgbody.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #buttonAdd{
     background-color: #2678F3;
 }
+
+#welcome{
+    background-image: url('../src/assets/bgwelcome.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#home{
+    background-image: url('../src/assets/bghome.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#board{
+  background-image: url('../src/assets/bgboard.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+thead{
+    background-color: rgba(47, 0, 255, 0.25) 
+  }
+ 
+ /* ancho de la barra */
+::-webkit-scrollbar {
+    width: 1px;
+    height: 15px;       
+  }
+  
+  /* color de fondo de la barra */
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  /* color del relleno de la barra */
+  ::-webkit-scrollbar-thumb {
+    background-color: #0047A0;
+  }
+  
+  /* color del relleno de la barra cuando está en hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+  }
+
+  select option {
+    background-color: #0047A0;
+    color: #FFFFFF;
+  }
