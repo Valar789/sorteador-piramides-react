@@ -51,26 +51,54 @@ export default function CardIndividual({ keyName, groupByCode }) {
           </ul>
         </div>
 
-        <div className="col-span-6">
-          <div className="">
-            <ul className="text-sm">
-              <li className="m-2 bg-white/30 rounded-lg">
-                <span className="font-medium">CATEGORÍA:</span>{" "}
+        <div className="col-span-6 w-min">
+          <div className="grid grid-cols-12 my-2 bg-white/30 mx-8 rounded-lg w-72 ">
+            <div className="col-span-6">
+              <p className="mx-2 font-medium">CATEGORÍA:</p>
+            </div>
+            <div className="col-span-6">
+              <p className="text-center bg-white/30 rounded-lg">
+                {" "}
                 {groupByCode[0]["Categoría"]}
-              </li>
-              <li className="m-2 bg-white/30 rounded-lg">
-                <span className="font-medium">GRADO:</span>{" "}
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-12 my-2 bg-white/30 mx-8 rounded-lg w-72">
+            <div className="col-span-6">
+              <p className="mx-2 font-medium">GRADO:</p>
+            </div>
+            <div className="col-span-6">
+              <p className="text-center bg-white/30 rounded-lg">
+                {" "}
                 {groupByCode[0]["Grado"]}
-              </li>
-              <li className="m-2 bg-white/30 rounded-lg">
-                <span className="font-medium">RAMA:</span>{" "}
+              </p>
+              </div>
+              </div>
+
+            
+            <div className="grid grid-cols-12 my-2 bg-white/30 mx-8 rounded-lg w-72 ">
+            <div className="col-span-6">
+              <p className="mx-2 font-medium">RAMA:</p>
+            </div>
+            <div className="col-span-6">
+              <p className="text-center bg-white/30 rounded-lg">
+                {" "}
                 {groupByCode[0]["Rama"]}
-              </li>
-              <li className="m-2 bg-white/30 rounded-lg">
-                <span className="font-medium">DIVISIÓN:</span>{" "}
+              </p>
+            </div>
+            </div>
+
+            <div className="grid grid-cols-12 my-2 bg-white/30 mx-8 rounded-lg w-72 ">
+            <div className="col-span-6">
+              <p className="mx-2 font-medium">DIVISIÓN:</p>
+            </div>
+            <div className="col-span-6">
+              <p className="text-center bg-white/30 rounded-lg">
+                {" "}
                 {groupByCode[0]["División"]}
-              </li>
-            </ul>
+              </p>
+            </div>
           </div>
           <div>
             <span className="grid grid-cols 12 justify-end">
