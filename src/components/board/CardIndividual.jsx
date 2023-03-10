@@ -2,7 +2,25 @@ import React, { useState } from "react";
 
 export default function CardIndividual({ keyName, groupByCode }) {
   const [isReady, setIsReady] = useState(false);
-  const handleIsReady = () => setIsReady(true);
+  const handleIsReady = () => {
+    setIsReady(true);
+    const cantidad = groupByCode.length;
+    let tipo = null;
+    if (cantidad === 1) {
+      tipo = "No se puede sortear";
+    } else if (cantidad <= 3) {
+      tipo = "piramide-3";
+    } else if (cantidad <= 4) {
+      tipo = "piramide-4";
+    } else if (cantidad <= 8) {
+      tipo = "piramide-8";
+    } else if (cantidad <= 16) {
+      tipo = "piramide-16";
+    } else if (cantidad <= 32) {
+      tipo = "piramide-32";
+    }
+    console.log({ cantidad, tipo });
+  };
 
   return (
     <div className="col-span-6 mx-3 my-3  bg-white/20 border-2 border-gray-200 rounded-2xl shadow">
@@ -24,10 +42,10 @@ export default function CardIndividual({ keyName, groupByCode }) {
           <ul className="h-36 overflow-auto">
             {groupByCode.map((deportista, index) => (
               <div key={index} className="">
-                <li className="text-sm">
+                <li className="text-md">
                   {index + 1} {deportista["Nombre Deportista"]}
                 </li>
-                <p className="pl-12 mb-2 text-xs">{deportista["Delegación"]}</p>
+                <p className="pl-12 mb-2 text-sm">{deportista["Delegación"]}</p>
               </div>
             ))}
           </ul>
@@ -35,61 +53,24 @@ export default function CardIndividual({ keyName, groupByCode }) {
 
         <div className="col-span-6">
           <div className="">
-            <table className="">
-              <tbody className=" text-sm">
-              <div>
-                <div className="m-2 bg-white/30 rounded-lg">
-                <tr className="">
-                  <th
-                    scope="row"
-                    className=" px-5"
-                  >
-                    CATEGORÍA
-                  </th>
-                  <td className=" px-6 rounded-lg bg-white/30">
-                    {groupByCode[0]["Categoría"]}
-                  </td>
-                </tr>
-                </div>
-                <div className="m-2 bg-white/30 rounded-lg">
-                <tr className="">
-                  <th className="px-10 font-medium">
-                    GRADO
-                  </th>
-                  <td className="px-6 rounded-lg bg-white/30">
-                    {groupByCode[0]["Grado"]}
-                  </td>
-                </tr>
-                </div>
-                <div className="m-2 bg-white/30 rounded-lg">
-                <tr className="">
-                  <th
-                    scope="row"
-                    className="px-5 font-medium "
-                  >
-                    RAMA
-                  </th>
-                  <td className="px-6 rounded-lg bg-white/30">
-                    {groupByCode[0]["Rama"]}
-                  </td>
-                </tr>
-                </div>
-                <div className="m-2 bg-white/30 rounded-lg">
-                <tr className="">
-                  <th
-                    scope="row"
-                    className="px-5 font-medium "
-                  >
-                    DIVISIÓN
-                  </th>
-                  <td className="px-6 rounded-lg bg-white/30">
-                    {groupByCode[0]["División"]}
-                  </td>
-                </tr>
-                </div>
-                </div>
-              </tbody>
-            </table>
+            <ul className="text-sm">
+              <li className="m-2 bg-white/30 rounded-lg">
+                <span className="font-medium">CATEGORÍA:</span>{" "}
+                {groupByCode[0]["Categoría"]}
+              </li>
+              <li className="m-2 bg-white/30 rounded-lg">
+                <span className="font-medium">GRADO:</span>{" "}
+                {groupByCode[0]["Grado"]}
+              </li>
+              <li className="m-2 bg-white/30 rounded-lg">
+                <span className="font-medium">RAMA:</span>{" "}
+                {groupByCode[0]["Rama"]}
+              </li>
+              <li className="m-2 bg-white/30 rounded-lg">
+                <span className="font-medium">DIVISIÓN:</span>{" "}
+                {groupByCode[0]["División"]}
+              </li>
+            </ul>
           </div>
           <div>
             <span className="grid grid-cols 12 justify-end">

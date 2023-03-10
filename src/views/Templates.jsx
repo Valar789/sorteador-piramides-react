@@ -11,7 +11,7 @@ export default function Templates() {
       <div id="" className="px-32 pt-10 text-white ">
         <BreadCrumb/>
         <HeaderTemplates />
-        <TableCategories />
+        <TableCategories/>
         <TablePositions />
       </div>
     </>

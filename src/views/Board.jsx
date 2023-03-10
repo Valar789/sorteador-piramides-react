@@ -14,7 +14,7 @@ export default function Board() {
   return (
     <Layout>
       <div id="board" className="px-32 pt-10 text-white ">
-        <BreadCrumb />
+        <BreadCrumb/>
         <HeaderBoard amount={keysCode.length} />
         <SelectFliter setKeysCode={setKeysCode} setgroupsByCode={setgroupsByCode} />
         <CardsBoard  groupsByCode={groupsByCode} keysCode={keysCode} />
