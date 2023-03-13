@@ -1,30 +1,49 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Finder from "../components/dataTable/Finder";
 import Table from "../components/dataTable/Table";
 import Layout from "../components/layout/Layout";
 import NavBar from "../components/layout/NavBar";
 import iconDivider from '../assets/icons/iconDivider.svg'
+import Loader from "../components/layout/Loader";
+import BreadCrumb from "../components/layout/BreadCrumb";
 
 export default function DataTable() {
   const [dataExcel, setDataExcel] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [filteredPerson, setFilteredPerson] = useState(dataExcel);
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const json = localStorage.getItem("excelData");
-    console.log(json);
+
     if (json !== null) {
       const data = JSON.parse(json);
-      console.log(data);
+
       setDataExcel(data);
     }
   }, []);
 
+  const navigateBoard=(e)=>{
+    e.preventDefault()
+    setIsLoading(true)
+    setTimeout(() => {
+     setIsLoading(false)
+     navigate('/board')
+    }, 1000);
+
+  }
+
   return (
     <Layout>
-      <div className="grid place-content-center h-full">
+      {isLoading ? (
+        <Loader />
+      ) : 
+      <div className="grid place-content-center h-screen">
+
       <div className="text-white max-w-5xl">
+      <BreadCrumb/>
         <div className="grid grid-cols-12 mb-4">
           <Finder
             dataExcel={dataExcel}
@@ -46,12 +65,12 @@ export default function DataTable() {
               ? filteredPerson.length
               : dataExcel.length}
           </div>
-          <Link to="/board" className="bg-red-600 px-7 py-2 rounded-md">
+          <button onClick={navigateBoard} className="bg-red-600 px-7 py-2 rounded-md">
             Ver grupos
-          </Link>
+          </button>
         </div>
       </div>
-      </div>
+      </div>}
     </Layout>
   );
 }
